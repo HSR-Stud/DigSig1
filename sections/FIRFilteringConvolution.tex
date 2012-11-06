@@ -1,0 +1,130 @@
+\section{FIR Filtering and Convolution\buch{Chapter 4}}
+\subsection{Block Processing Methods}
+\subsubsection{Convolution}
+
+
+\subsubsection{Direct Form}
+\begin{tabular}{|l|l|}
+	\hline
+	$h$		& $h=[h_0,h_1, \ldots , h_M]$
+	\\ \hline
+	$L_h$	& $L_h = M + 1$
+	\\ \hline
+	$L_y$	& $L_y = L + M = L_x + L_h - 1$
+	\\ \hline
+	$y(n)$	& $y(n) = \sum\limits_{m=max(0,n-L+1)}^{min(n,M)} h(m)x(n-m)$
+	\\ \hline 
+\end{tabular}
+
+
+\subsubsection{Convolution Table}
+
+
+\subsubsection{LTI Form}
+\[
+	y(n) = \sum\limits_{m=max(0,n-M)}^{min(n,L-1)} x(m)h(n-m)
+\]
+
+
+\subsubsection{Matrix Form}
+The convolutional eqations can also be written in the linear matrix form:
+\[
+	y = H  x	\qquad \text{or} \qquad y = Xh
+\]
+where $H$ is built out of the filter's impulse response $h$ or the signal matrix $X$ is built out of the input signal. 
+The filter matrix $H$, respectivly the signal matrix $X$, must be rectangular with dimensions
+\[
+	L_y \times L_x = (L + M)\times L \qquad \text{or} \qquad
+	L_y \times L_h = (L + M)\times (M + 1)
+\]
+
+Example:
+\setArrayStretch{1}
+\[
+	y =
+	\begin{bmatrix}
+		y_0 \\
+		y_1 \\
+		y_3 \\
+		y_4 \\
+		y_5 \\
+		y_6 \\
+		y_7
+	\end{bmatrix}
+	= \begin{bmatrix}
+		h_0	& 0		& 0		& 0		& 0 \\
+		h_1	& h_0	& 0 	& 0 	& 0 \\
+		h_2	& h_1	& h_0	& 0		& 0 \\
+		h_3 & h_2	& h_1	& h_0	& 0 \\
+		0	& h_3	& h_2	& h_1	& h_0 \\
+		0	& 0		& h_3	& h_2	& h_1 \\
+		0	& 0		& 0		& h_3	& h_2 \\
+		0	& 0		& 0		& 0		& h_3	 
+	  \end{bmatrix}
+	  \begin{bmatrix}
+	  	x_0 \\
+	  	x_1 \\
+	  	x_2 \\
+	  	x_3 \\
+	  	x_4
+	  \end{bmatrix}
+	= Hx
+\]
+\resetArrayStretch
+
+
+\subsubsection{Flip-and-Slide Form}
+
+
+\subsubsection{Transient and Steady-State Behavior}
+\begin{tabular}{|l|l|}
+	\hline
+	input-on trainsients	& $ 0 \leq n < M $
+	\\ \hline
+	steady state			& $ M \leq n \leq L-1 $
+	\\ \hline
+	input-off transient		& $ L-1 < n \leq L-1+M $
+	\\ \hline
+\end{tabular}\newline
+
+Therefore, the direct form takes the following different forms depending
+on the value of the output index $n$:
+\[
+	y_n =
+		\left\{
+			\begin{array}{r l l l}
+				\sum\limits_{m=0}^{n} & h_m x_{n-m}		& \quad \text{if } 0 \leq n < M			& \quad \text{input-on} \\
+				\sum\limits_{m=0}^{M} & h_m x_{n-m}		& \quad \text{if } M \leq n \leq L-1	& \quad \text{steady state} \\
+				\sum\limits_{m=n-L+1}^{M} & h_m x_{n-m}	& \quad \text{if } L-1 < n \leq L-1+M	& \quad \text{input-off}
+			\end{array}
+		\right.
+\]
+
+
+\subsubsection{Convolution of Infinite Sequences}
+Three cases:
+\setArrayStretch{1}
+\begin{enumerate}
+  \item Infinite filter, finite input; i.e., $M = \infty$, $L < \infty$
+  \item Finite filter, infinite input; i.e., $M < \infty$, $L = \infty$
+  \item Infinite filter, infinite input; i.e., $M = \infty$, $L = \infty$
+\end{enumerate}
+\resetArrayStretch
+
+Therefore, the direct form takes the following different forms:
+\[
+	y_n =
+		\left\{
+			\begin{array}{r l l}
+				\sum\limits_{m=max(0,n-L+1)}^{n} & h_m x_{n-m}		& \quad \text{if $M = \infty$, $L < \infty$} \\	
+				\sum\limits_{m=0}^{min(n,M)} & h_m x_{n-m}		& \quad \text{if $M < \infty$, $L = \infty$ } \\
+				\sum\limits_{m=0}^{n} & h_m x_{n-m}	& \quad \text{if $M = \infty$, $L = \infty$ }
+			\end{array}
+		\right.
+\]
+
+
+
+
+	
+	

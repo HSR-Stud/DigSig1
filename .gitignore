@@ -1,3 +1,5 @@
+DigSig1.pdf
+/tmp
 *.aux
 *.bbl
 *.blg
@@ -19,7 +21,7 @@
 *.pdfsync
 *.ps
 *.snm
-*.synctex.gz
+*.synctex*
 *.toc
 *.vrb
 *.maf

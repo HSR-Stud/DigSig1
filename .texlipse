@@ -1,0 +1,14 @@
+#TeXlipse project settings
+#Tue Oct 23 10:22:24 CEST 2012
+markTmpDer=true
+builderNum=2
+outputDir=
+makeIndSty=
+bibrefDir=
+outputFormat=pdf
+tempDir=tmp
+mainTexFile=DigSig1.tex
+outputFile=DigSig1.pdf
+langSpell=de
+markDer=true
+srcDir=
