@@ -1,0 +1,3 @@
+[submodule "header"]
+	path = header
+	url = git@github.com:HSR-Stud/header.git
