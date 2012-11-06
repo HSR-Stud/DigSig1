@@ -1,5 +1,28 @@
 \section{Discret-Time Systems\buch{Chapter 3}}
 \subsection{Linearity and time invariance}
+
+
 \subsection{Impulse response}
+\begin{tabular}{ll}
+	\textbf{LTI form:}		& $y(n) = \sum\limits_m x(m)h(n-m)$ \\
+	\textbf{direct form:}	& $y(n) = \sum\limits_m h(m)x(n-m)$
+\end{tabular}
+
+
 \subsection{FIR and IIR filters}
+\begin{tabular}{|l|l|l|}
+	\hline
+	$M$	& filter order				& 
+	\\ \hline
+	$h$	& filter impulse response	& $\{ h_0, h_1, h_2, \ldots , h_M, 0, 0, \ldots\}$
+	\\ \hline
+	$L_h$	& length of $h$			& $L_h = M + 1$
+	\\ \hline
+	FIR		& FIR filtering equation	& $y(n) = \sum\limits_{m=0}^{M} h(m)x(n-m)$
+	\\ \hline
+	IIR		& IIR filtering equation	& $y(n) = \sum\limits_{m=0}^{\infty} h(m)x(n-m)$
+	\\ \hline
+\end{tabular}
+
+
 \subsection{Causality and stability}

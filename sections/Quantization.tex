@@ -1,7 +1,65 @@
 \section{Quantization\buch{Chapter 2}}
+
 \subsection{Quantization process}
+\begin{tabular}{|l|l|l|}
+	\hline
+	$R$			& full-scale range		& $R = Q \cdot 2^B$
+	\\ \hline
+	$B$			& bits					& $B = log_2(\frac{Q}{R})$
+	\\ \hline
+	$Q$			& quantization width	& $Q = \frac{R}{2^B}$
+	\\ \hline
+	$e$			& quantization error	& $e_Q(nT) = x_Q(nT) -x(nT)$
+	\\ \hline
+	$e_{RMS}$	& root-mean-square error & $e_{RMS} = \frac{Q}{\sqrt{12}}$
+	\\ \hline
+	$SNR$		& signal-to-noise ratio	& $SNR = 20 log_{10}(\frac{R}{Q}) = 6B\, dB$
+	\\ \hline
+	$\sigma_e^2$& average power / variance & $\sigma_e^2 = E[e^2(n)] = \frac{Q^2}{12}$
+	\\ \hline
+\end{tabular}
+
+
 \subsection{Oversampling and noise shaping}
+\begin{tabular}{|l|l|l|}
+	\hline
+	$L$	& oversampling ratio	& $L = \frac{f_s'}{f_s}$ with $f_s'$ as higher sampling rate
+	\\ \hline
+	$\Delta B$	& saved bits without noise shaping	& $\Delta B = 0.5 \cdot log_2(L)$ \\
+				& saved bits with noise shaping		& $\Delta B = (p + 0.5) \cdot log_2(L) - 0.5 \cdot log_2(\frac{\pi^{2p}}{2p + 1})$
+	\\ \hline
+\end{tabular}
+
+Performance of oversampling noise shaping quantizers:
+
+\setArrayStretch{1.2}
+\begin{tabular}{|c|l|c|c|c|c|c|c|}
+	\hline
+	$p$	& $L$							& 4		& 8		& 16	& 32	& 64	& 128
+	\\ \hline
+	0	& $\Delta B =0.5 \cdot log_2(L)$		& 1.0	& 1.5	& 2.0	& 2.5	& 3.0	& 3.5 \\
+	1	& $\Delta B =1.5 \cdot log_2(L) - 0.86$ & 2.1	& 3.6	& 5.1	& 6.6	& 8.1	& 9.6 \\
+	2	& $\Delta B =2.5 \cdot log_2(L) - 2.14$	& 2.9	& 5.4	& 7.9	& 10.4	& 12.9	& 15.4 \\
+	3	& $\Delta B =3.5 \cdot log_2(L) - 3.55$	& 3.5	& 7.0	& 10.5	& 14.0	& 17.5	& 21.0 \\
+	4	& $\Delta B =4.5 \cdot log_2(L) - 5.02$	& 4.0	& 8.5	& 13.0	& 17.5	& 22.0	& 26.5 \\
+	5	& $\Delta B =5.5 \cdot log_2(L) - 6.53$	& 4.5	& 10.0	& 15.5	& 21.0	& 26.5	& 32.0 \\
+	\hline
+\end{tabular}
+\resetArrayStretch
+
+
 \subsection{D/A converters}
+\begin{tabular}{|l|l|}
+	\hline
+	natural binary & $x_Q = R(b_1 2^{-1} + b_2 2^{-2} + \ldots + b_B 2^{-B})$
+	\\ \hline
+	offset binary	& $x_Q = R(b_1 2^{-1} + b_2 2^{-2} + \ldots + b_B 2^{-B} - 0.5)$
+	\\ \hline
+	two's complement & $x_Q = R(\overline{b_1} 2^{-1} + b_2 2^{-2} + \ldots + b_B 2^{-B} - 0.5)$
+	\\ \hline
+\end{tabular}
+
+
 \subsection{A/D converters}
 \subsection{Analog and digital dither}
 Dither is a small white noise signal that is added to the input signal befor quantization.
