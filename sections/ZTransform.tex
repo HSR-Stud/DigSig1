@@ -1,1 +1,41 @@
 \section{z-Transformation}
+
+\subsection{Basic Properties}
+
+\[
+	X(z) = \sum\limits_{n=-\infty}^\infty x(n)z^{-n}
+\]
+
+\begin{tabular}{|l|l|}
+	\hline
+	linearity & $a_1x_1(n) + a_2x_2(n) \overset{Z}{\longrightarrow} a_1X_1(z) + a_2X_2(z)$
+	\\ \hline
+	delay	& $x(n) \overset{Z}{\longrightarrow} X(z) \Longrightarrow x(n-D) \overset{Z}{\longrightarrow} z^{-D}X(z)$
+	\\ \hline
+	convolution & $y(n) = h(n) \convolution x(n) \Longrightarrow Y(z) = H(z)X(z)$
+	\\ \hline
+\end{tabular}
+
+
+\subsection{Region of Convergence}
+
+\[
+	\{ z \in \mathbb{C} \quad | \quad X(z) = \sum\limits_{n=-\infty}^{\infty} x(n)z^{-n} \neq \infty \}
+\]
+
+\begin{tabular}{|l|l|}
+	\hline
+	infinite geometric series 1 & $1 + x + x^2 + x^3 + \ldots = \sum\limits_{n=0}^{\infty} x^n = \frac{1}{1-x}$
+	\\ \hline
+	infinite geometric series 2 & $x + x^2 + x^3 + \ldots = \sum\limits_{m=1}^{\infty} x^m = \frac{x}{1-x}$
+	\\ \hline
+\end{tabular}
+
+
+\subsection{Causality and Stability}
+
+
+\subsection{Frequency Spectrum}
+\begin{align*}
+	X(\omega)&= \sum\limits_{n=-\infty}^{\infty} x(n)e^{-j\omega n} \quad \text{(DTFT)}
+\end{align*}
