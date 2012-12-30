@@ -5,9 +5,12 @@
 	\hline
 	probability density & $f_x(\alpha) = \frac{d}{dx}F_x(\alpha)$\\
 	\hline
-	mean / expected value & $E\{x\} = \sum\limits_k \alpha_k Pr\{x = \alpha_k\}$ \\
+	mean / expected value & $E\{x\} = \sum\limits_k \alpha_k Pr\{x = \alpha_k\} =
+	\int\limits_{-\infty}^{\infty}a\cdot f_x(a)da$
+	\\
 	\hline
-	signal power & $E\{ x^2 \} = \int\limits_{-\infty}^{\infty} \alpha^2 f_x(\alpha) d\alpha$ \\
+	signal power & $E\{ x^2 \} = \sum\limits_k \alpha_k^2 Pr\{x = \alpha_k\} =
+	\int\limits_{-\infty}^{\infty} \alpha^2 f_x(\alpha) d\alpha$ \\
 	\hline
 	average absolute value & $E\{ |x| \} = \int\limits_{-\infty}^{\infty} |\alpha| f_x(\alpha) d\alpha 
 										 = \int\limits_{0}^{\infty} \alpha[f_x(\alpha) + f_x(-\alpha)] d\alpha $
