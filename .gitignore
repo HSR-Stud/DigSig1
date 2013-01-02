@@ -1,4 +1,5 @@
 DigSig1.pdf
+revision.tex
 /tmp
 *.aux
 *.bbl
@@ -27,3 +28,4 @@ DigSig1.pdf
 *.maf
 *.mtc
 *.mtc0
+*.fls
