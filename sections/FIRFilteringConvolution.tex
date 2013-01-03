@@ -19,6 +19,37 @@
 
 \subsubsection{Convolution Table}
 
+\begin{tikzpicture}
+%lines
+\draw (-0.5,3.5) -- (5.5, 3.5) -- (5.5,-0.5) -- (0.5,-0.5) -- (0.5,4.5);
+\draw [dashed] (0.5,2) -- (2,3.5);
+\draw [dashed] (0.5,1) -- (3,3.5);
+\draw [dashed] (0.5,0) -- (4,3.5);
+\draw [dashed] (1,-0.5) -- (5,3.5);
+\draw [dashed] (2,-0.5) -- (5.5,3);
+\draw [dashed] (3,-0.5) -- (5.5,2);
+\draw [dashed] (4,-0.5) -- (5.5,1);
+
+%nodes
+\foreach \h in {0,1,2,3} {
+	\node at (0,3-\h) {$h_{\h}$};
+};
+\foreach \x in {0,1,2,3,4} {
+	\node at (\x+1, 4) {$x_{\x}$};
+	\foreach \h in {0,1,2,3} {
+		\node at (\x+1, 3-\h) {$h_{\h}x_{\x}$};
+	};
+};
+\foreach \n in {0,...,5} {
+	\node [rotate=45] at (\n+0.5,2.5) {$y_{\n}$};
+};
+\node [rotate=45] at (5.5,1.5) {$y_6$};
+\node [rotate=45] at (5.5,0.5) {$y_7$};
+
+\end{tikzpicture}
+
+$y=[y_0, y_1, y_2, y_3, y_4, y_5, y_6, y_7]$
+
 
 \subsubsection{LTI Form}
 \[
