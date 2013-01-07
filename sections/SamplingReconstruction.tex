@@ -19,6 +19,9 @@ Sampling Theorem (Nyquist rate):
 \[ f_s \geq 2f_{max} \qquad \text{or} \qquad T \leq \frac{1}{2f_{max}} \]
 Nyquist interval:
 \[ \left[-\frac{f_s}{2}, \frac{f_s}{2}\right] \]
+
+The Spectrum ${X}(f)$ of the sampled signal will be replicated
+\[ \hat{X}(f) = \frac{1}{T} \sum_{m=-\infty}^{\infty}X(f-m f_s)\]
 \subsubsection{Aliasing}
 If the signal frequency $f$ is outside the nyquist interval, the signal will be
 aliased with $f - f_{sampling}$.\\
