@@ -20,8 +20,20 @@ Sampling Theorem (Nyquist rate):
 Nyquist interval:
 \[ \left[-\frac{f_s}{2}, \frac{f_s}{2}\right] \]
 
-The Spectrum ${X}(f)$ of the sampled signal will be replicated
+The spectrum $X(f)$ of the sampled signal will be replicated
 \[ \hat{X}(f) = \frac{1}{T} \sum_{m=-\infty}^{\infty}X(f-m f_s)\]
+
+
+\subsubsection{Flat-top sampling}
+In practical sampling each sample is held for a short period of time ($\tau$).
+\[ x_{flat}(t) =  \sum_{n=-\infty}^{\infty}x(nT)p(t - nT) ~~~ p(t) \text{: flat-top pulse with duration } \tau \]
+
+This is equivalent to filtering the perfectly sampled signal $\hat{x}$ with a linear filter with the impulse response $p(t)$.
+The spectrum of the filter looks like this
+\[ |P(f)| = \tau \left| \frac{sin(\pi f \tau)}{\pi f \tau} \right| \]
+% TODO maybe add plot
+
+
 \subsubsection{Aliasing}
 If the signal frequency $f$ is outside the nyquist interval, the signal will be
 aliased with $f - f_{sampling}$.\\
