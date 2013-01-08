@@ -1,7 +1,7 @@
 \section{Quantization\buch{Chapter 2}}
 
 \subsection{Quantization process}
-\begin{tabular}{|l|l|l|}
+\begin{tabularx}{0.75\textwidth}{|l|X|X|}
 	\hline
 	$R$			& full-scale range		& $R = Q \cdot 2^B$
 	\\ \hline
@@ -17,23 +17,23 @@
 	\\ \hline
 	$\sigma_e^2$& average power / variance & $\sigma_e^2 = E[e^2(n)] = \frac{Q^2}{12}$
 	\\ \hline
-\end{tabular}
+\end{tabularx}
 
 
 \subsection{Oversampling and noise shaping}
-\begin{tabular}{|l|l|l|}
+\begin{tabularx}{0.75\textwidth}{|l|l|X|}
 	\hline
 	$L$	& oversampling ratio	& $L = \frac{f_s'}{f_s}$ with $f_s'$ as higher sampling rate
 	\\ \hline
 	$\Delta B$	& saved bits without noise shaping	& $\Delta B = 0.5 \cdot log_2(L)$ \\
 				& saved bits with noise shaping		& $\Delta B = (p + 0.5) \cdot log_2(L) - 0.5 \cdot log_2\left(\frac{\pi^{2p}}{2p + 1}\right)$
 	\\ \hline
-\end{tabular}
+\end{tabularx}
 
 Performance of oversampling noise shaping quantizers:
 
 \setArrayStretch{1.2}
-\begin{tabular}{|c|l|c|c|c|c|c|c|}
+\begin{tabularx}{0.75\textwidth}{|c|X|c|c|c|c|c|c|}
 	\hline
 	$p$	& $L$							& 4		& 8		& 16	& 32	& 64	& 128
 	\\ \hline
@@ -44,12 +44,12 @@ Performance of oversampling noise shaping quantizers:
 	4	& $\Delta B =4.5 \cdot log_2(L) - 5.02$	& 4.0	& 8.5	& 13.0	& 17.5	& 22.0	& 26.5 \\
 	5	& $\Delta B =5.5 \cdot log_2(L) - 6.53$	& 4.5	& 10.0	& 15.5	& 21.0	& 26.5	& 32.0 \\
 	\hline
-\end{tabular}
+\end{tabularx}
 \resetArrayStretch
 
 
 \subsection{D/A converters}
-\begin{tabular}{|l|l|}
+\begin{tabularx}{0.75\textwidth}{|l|X|}
 	\hline
 	natural binary & $x_Q = R(b_1 2^{-1} + b_2 2^{-2} + \ldots + b_B 2^{-B})$
 	\\ \hline
@@ -57,7 +57,7 @@ Performance of oversampling noise shaping quantizers:
 	\\ \hline
 	two's complement & $x_Q = R(\overline{b_1} 2^{-1} + b_2 2^{-2} + \ldots + b_B 2^{-B} - 0.5)$
 	\\ \hline
-\end{tabular}
+\end{tabularx}
 
 
 \subsection{A/D converters}

@@ -6,7 +6,7 @@
 	X(z) = \sum\limits_{n=-\infty}^\infty x(n)z^{-n}
 \]
 
-\begin{tabular}{|l|l|}
+\begin{tabularx}{0.6\textwidth}{|l|X|}
 	\hline
 	linearity & $a_1x_1(n) + a_2x_2(n) \overset{Z}{\longrightarrow} a_1X_1(z) + a_2X_2(z)$
 	\\ \hline
@@ -14,7 +14,7 @@
 	\\ \hline
 	convolution & $y(n) = h(n) \convolution x(n) \Longrightarrow Y(z) = H(z)X(z)$
 	\\ \hline
-\end{tabular}
+\end{tabularx}
 
 
 \subsection{Region of Convergence}
@@ -23,13 +23,13 @@
 	\{ z \in \mathbb{C} \quad | \quad X(z) = \sum\limits_{n=-\infty}^{\infty} x(n)z^{-n} \neq \pm \infty \}
 \]
 
-\begin{tabular}{|l|l|}
+\begin{tabularx}{0.6\textwidth}{|l|X|}
 	\hline
 	infinite geometric series 1 & $1 + x + x^2 + x^3 + \ldots = \sum\limits_{n=0}^{\infty} x^n = \frac{1}{1-x}$
 	\\ \hline
 	infinite geometric series 2 & $x + x^2 + x^3 + \ldots = \sum\limits_{m=1}^{\infty} x^m = \frac{x}{1-x}$
 	\\ \hline
-\end{tabular}
+\end{tabularx}
 
 
 \subsection{Causality and Stability}
