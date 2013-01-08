@@ -20,7 +20,7 @@
 \subsection{Region of Convergence}
 
 \[
-	\{ z \in \mathbb{C} \quad | \quad X(z) = \sum\limits_{n=-\infty}^{\infty} x(n)z^{-n} \neq \infty \}
+	\{ z \in \mathbb{C} \quad | \quad X(z) = \sum\limits_{n=-\infty}^{\infty} x(n)z^{-n} \neq \pm \infty \}
 \]
 
 \begin{tabular}{|l|l|}
@@ -34,8 +34,27 @@
 
 \subsection{Causality and Stability}
 
+For a signal or system to be simultaneously stable and causal, it is necessary that all its poles lie strictly inside the unit circle in the z-plane. 
+\[ 1 > \max\limits_{i}|p_i| \]
+
+A signal or system
+can also be simultaneously stable and anticausal, but in this case all its poles must lie
+strictly outside the unit circle.
+\[ 1 < \min\limits_{i}|p_i| \]
 
 \subsection{Frequency Spectrum}
 \begin{align*}
-	X(\omega)&= \sum\limits_{n=-\infty}^{\infty} x(n)e^{-j\omega n} \quad \text{(DTFT)}
+	X(\omega)&= \sum\limits_{n=-\infty}^{\infty} x(n)e^{-j\omega n} \quad \text{(DTFT)} \
+	\qquad \omega = \frac{2 \pi f}{f_s} \qquad -\pi \leq \omega \leq \pi
+\end{align*}
+
+\begin{align*}
+	x(n)&= \frac{1}{2\pi} \int\limits_{-\pi}^{\pi} X(\omega)e^{j\omega n} d\omega \quad \text{(inverse DTFT)} 
+\end{align*}
+
+Another useful relationship is Parseval’s equation, which relates the total energy of
+a sequence to its spectrum:
+
+\begin{align*}
+	\sum_{n=-\infty}^{\infty} |x(n)|^2&= \frac{1}{2\pi} \int\limits_{-\pi}^{\pi} |X(\omega)|^2 d\omega \quad \text{(Parseval)} 
 \end{align*}

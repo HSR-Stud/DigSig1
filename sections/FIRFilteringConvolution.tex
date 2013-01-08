@@ -200,6 +200,7 @@ Example:
 
 
 \subsubsection{Transient and Steady-State Behavior}
+
 \begin{tabular}{|l|l|}
 	\hline
 	input-on trainsients	& $ 0 \leq n < M $
@@ -209,6 +210,9 @@ Example:
 	input-off transient		& $ L-1 < n \leq L-1+M $
 	\\ \hline
 \end{tabular}\newline
+The DC gain of a stable filter is the steady-state value to which the output converges when the input is a unit step
+\[ y_{dc} = \sum_{m}^{} h(m) \qquad y_{dc}=\sum_{m=0}^{\infty}h(m) \]
+
 
 Therefore, the direct form takes the following different forms depending
 on the value of the output index $n$:
