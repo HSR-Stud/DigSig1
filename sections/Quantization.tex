@@ -62,4 +62,16 @@ Performance of oversampling noise shaping quantizers:
 
 \subsection{A/D converters}
 \subsection{Analog and digital dither}
-Dither is a small white noise signal that is added to the input signal befor quantization.
+Dither is a small white noise signal that is added to the input signal befor quantization. The variance of the noise is $\sigma_v^2$ and the variance of the quantization is $\sigma_e^2$. The total variance is :
+
+\[ \sigma_{\epsilon}^2 = \sigma_e^2 + \sigma_v^2 \]
+
+\begin{equation}
+	\sigma_{\epsilon}^2 = 
+	\begin{cases}
+		\frac{Q^2}{12} & undithered \\
+		\frac{2Q^2}{12} & rectangular dither \\
+		\frac{3Q^2}{12} & triangular dither \\
+		\frac{4Q^2}{12} & Gaussian dither \\
+	\end{cases}
+\end{equation}
