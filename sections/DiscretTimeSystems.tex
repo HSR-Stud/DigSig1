@@ -37,6 +37,15 @@ testing: & $x_D(n)=x(n-D)$ and $y_D(n)=y(n-D)$\\
 	\textbf{mixed signals} & double-sided signals \\
 \end{tabular}
 
+\subsubsection{Anticausal to Causal}
+Delay the system by $D$ to move the negative time from $n=-D$ to $0$
+\begin{align*}
+h_D(n) =& h(n-D)\\
+y(n) =& \sum\limits_{m}h(m)x(n-m) \\
+y_D(n) = & \sum\limits_{m}h_D(m)x(n-m) = \sum\limits_{m}h(m-D)x(n-m) \\ 
+\xrightarrow{m := k+D}& \sum\limits_{k}h(k)x(n-k-D) = y(n-D)
+\end{align*}
+
 \subsection{Stability}
 \textbf{Stability Condition} $\sum\limits_{n=-\infty}^{\infty}\left| h(n)
 \right| < \infty$\\
