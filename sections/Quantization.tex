@@ -28,7 +28,9 @@
 	$L$	& oversampling ratio	& $L = \frac{f_s'}{f_s}$ with $f_s'$ as higher sampling rate
 	\\ \hline
 	$\Delta B$	& saved bits without noise shaping	& $\Delta B = 0.5 \cdot log_2(L)$ \\
-				& saved bits with noise shaping		& $\Delta B = (p + 0.5) \cdot log_2(L) - 0.5 \cdot log_2\left(\frac{\pi^{2p}}{2p + 1}\right)$
+				& saved bits with noise shaping		& $\Delta B = (p + 0.5) \cdot log_2(L) - 0.5 \cdot log_2\left(\frac{\pi^{2p}}{2p + 1}\right)$ \\
+				& & $L = \left(\frac{2^{2\Delta B} \pi^{2p}}{2p+1}\right)^{\frac{1}{2p+1}}$
+				
 	\\ \hline
 \end{tabularx}
 
