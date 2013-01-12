@@ -47,3 +47,9 @@ The stop frequency from the Antialiasing Prefilter is defined as:
 The attenuation of the Antialiasing Prefilter is:
 
 \[ A(f) = -20 \cdot \log_{10}{\left|\frac{H(f)}{H(f_0)}\right|} \]
+
+\[ A_{dB} = \alpha \log_{10}(\frac{f}{f_{cutoff}}) \qquad \alpha = \frac{dB}{dek} \]
+
+\[ A_{dB} = \beta \log_{2}(\frac{f}{f_{cutoff}}) \qquad \beta = \frac{dB}{okt} \]
+
+\[ A_{dB}(f) = A_{DAC}(f) + A_{POST}(f) \]
