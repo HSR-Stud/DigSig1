@@ -14,6 +14,10 @@
 	\\ \hline
 	convolution & $y(n) = h(n) \convolution x(n) \Longrightarrow Y(z) = H(z)X(z)$
 	\\ \hline
+	modulation & $a^n g(n) \Longrightarrow G(\frac{z}{a})$
+	\\ \hline
+	time inversion & $g(-n) \Longrightarrow G(z^{-1})$
+	\\ \hline
 \end{tabularx}
 
 
@@ -58,3 +62,32 @@ a sequence to its spectrum:
 \begin{align*}
 	\sum_{n=-\infty}^{\infty} |x(n)|^2&= \frac{1}{2\pi} \int\limits_{-\pi}^{\pi} |X(\omega)|^2 d\omega \quad \text{(Parseval)} 
 \end{align*}
+
+Some Z-Transforms: \\ \\
+\begin{tabularx}{0.6\textwidth}{|X|X|X|}
+	\hline
+	\textbf{x(n} ) & \textbf{X(z}) & \textbf{ROC} \\
+	\hline
+	$u(n)$ & $\frac{1}{1 - z^{-1}}$ & $|z|>1$ \\
+	\hline
+	$-u(-n-1)$ & $\frac{1}{1 - z^{-1}}$ & $|z|<1$ \\
+	\hline
+	$-(-1)^n u(n)$ & $\frac{1}{1 + z^{-1}}$ & $|z|>1$ \\
+	\hline
+	$-(-1)^n u(-n-1)$ & $\frac{1}{1 + z^{-1}}$ & $|z|<1$ \\
+	\hline
+	$a^n u(n)$ & $\frac{1}{1 + az^{-1}}$ & $|z|>a$ \\
+	\hline
+	$-a^n u(-n-1)$ & $\frac{1}{1 + az^{-1}}$ & $|z|<a$ \\
+	\hline
+\end{tabularx}\\ \\
+
+Euler: 
+
+\begin{align*}
+	\cos(\alpha) = \frac{e^{j\alpha} + e^{-j\alpha}}{2} \\
+	\sin(\alpha) = \frac{e^{j\alpha} - e^{-j\alpha}}{2j} \\
+	e^{j\frac{\pi}{2}n} = j^n\\
+	e^{-j\frac{\pi}{2}n} = (-j)^n\\
+\end{align*}
+
