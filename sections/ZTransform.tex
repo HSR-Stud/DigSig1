@@ -6,17 +6,17 @@
 	X(z) = \sum\limits_{n=-\infty}^\infty x(n)z^{-n}
 \]
 
-\begin{tabularx}{0.6\textwidth}{|l|X|}
+\begin{tabularx}{0.6\textwidth}{|l|r>{\centering}Xl|}
 	\hline
-	linearity & $a_1x_1(n) + a_2x_2(n) \overset{Z}{\longrightarrow} a_1X_1(z) + a_2X_2(z)$
+	linearity & $a_1x_1(n) + a_2x_2(n)$ & $\overset{Z}{\longrightarrow}$ & $a_1X_1(z) + a_2X_2(z)$
 	\\ \hline
-	delay	& $x(n) \overset{Z}{\longrightarrow} X(z) \Longrightarrow x(n-D) \overset{Z}{\longrightarrow} z^{-D}X(z)$
+	delay	& $x(n-D)$ & $\overset{Z}{\longrightarrow}$ & $z^{-D}X(z)$
 	\\ \hline
-	convolution & $y(n) = h(n) \convolution x(n) \Longrightarrow Y(z) = H(z)X(z)$
+	convolution & $y(n) = h(n) \convolution x(n)$ & $\overset{Z}{\longrightarrow}$ & $Y(z) = H(z)X(z)$
 	\\ \hline
-	modulation & $a^n g(n) \Longrightarrow G(\frac{z}{a})$
+	modulation & $a^n g(n)$ & $\overset{Z}{\longrightarrow}$ & $G(\frac{z}{a})$
 	\\ \hline
-	time inversion & $g(-n) \Longrightarrow G(z^{-1})$
+	time inversion & $g(-n)$ & $\overset{Z}{\longrightarrow}$ & $G(z^{-1})$
 	\\ \hline
 \end{tabularx}
 
