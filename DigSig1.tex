@@ -4,6 +4,12 @@
 \input{header/zusammenfassung}
 \input{header/hyperref}
 \usepackage{tikz}
+% Musste fuer idiotenseite hinzugefuegt werden
+\usepackage{circuitikz}
+\usepackage{multicol}
+\usepackage{rotating}
+\newcommand{\formelbuch}[1]{$_{\textcolor{red}{\mbox{\small{S#1}}}}$}
+\newcommand{\arraystretchOriginal}{1}
 
 \setDefaultArrayStretch{2}
 
@@ -31,6 +37,17 @@
 \input{sections/FIRFilteringConvolution}
 \input{sections/ZTransform}
 \input{sections/TransferFunctions}
+
+\section{Idiotenseite}
+\input{idiotenseite/trigo/subsections/Winkelargumente}
+\input{idiotenseite/trigo/subsections/Periodizitaet}
+\input{idiotenseite/trigo/subsections/Quadrantenbeziehungen}
+\input{idiotenseite/trigo/subsections/Additionstheoreme}
+\input{idiotenseite/trigo/subsections/DoppelHalbwinkel}
+\input{idiotenseite/trigo/subsections/Produkte}
+\input{idiotenseite/trigo/subsections/SummeDifferenzen}
+\input{idiotenseite/trigo/subsections/Euler}
+\input{idiotenseite/diverses/subsections/Reihenentwicklung}
 
 \end{document}
  
