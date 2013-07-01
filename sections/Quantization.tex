@@ -53,13 +53,24 @@ Performance of oversampling noise shaping quantizers:
 
 
 \subsection{D/A converters}
-\begin{tabularx}{0.75\textwidth}{|l|X|}
+\begin{tabularx}{\textwidth}{|l|X|l|l|}
 	\hline
-	natural binary & $x_Q = R(b_1 2^{-1} + b_2 2^{-2} + \ldots + b_B 2^{-B})$
+	\textbf{Name} & \textbf{Output calculation} & \textbf{Min} & \textbf{Max}
 	\\ \hline
-	offset binary	& $x_Q = R(b_1 2^{-1} + b_2 2^{-2} + \ldots + b_B 2^{-B} - 0.5)$
+	natural binary
+	& $x_Q = R(b_1 2^{-1} + b_2 2^{-2} + \ldots + b_B 2^{-B})$ 
+	& $0$
+	& $R-Q$
 	\\ \hline
-	two's complement & $x_Q = R(\overline{b_1} 2^{-1} + b_2 2^{-2} + \ldots + b_B 2^{-B} - 0.5)$
+	offset binary
+	& $x_Q = R(b_1 2^{-1} + b_2 2^{-2} + \ldots + b_B 2^{-B} - 0.5)$ 
+	& $-\frac{R}{2}$ 
+	& $\frac{R}{2} - Q$ 
+	\\ \hline
+	two's complement
+	& $x_Q = R(\overline{b_1} 2^{-1} + b_2 2^{-2} + \ldots + b_B 2^{-B} - 0.5)$
+	& 
+	& 
 	\\ \hline
 \end{tabularx}
 
@@ -70,7 +81,7 @@ Dither is a small white noise signal that is added to the input signal befor qua
 
 \[ \sigma_{\epsilon}^2 = \sigma_e^2 + \sigma_v^2 \]
 
-\begin{equation}
+\begin{equation*}
 	\sigma_{\epsilon}^2 = 
 	\begin{cases}
 		\frac{Q^2}{12} & undithered \\
@@ -78,4 +89,4 @@ Dither is a small white noise signal that is added to the input signal befor qua
 		\frac{3Q^2}{12} & triangular dither \\
 		\frac{4Q^2}{12} & Gaussian dither \\
 	\end{cases}
-\end{equation}
+\end{equation*}

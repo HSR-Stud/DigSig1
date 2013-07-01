@@ -34,6 +34,14 @@ A sampled sinusoid takes the form in these units:
 \input{tikz/frequencyUnits}
 \end{center}
 
+\subsubsection{Discrete-Time Fourier Transform}
+\[
+	\hat{X}(f) = \sum_{n=-\infty}^{\infty} x(nT)e^{-2\pi jfTn}
+\]
+\[
+	x(nT) = \frac{1}{f_s} \int_{-f_s/2}^{f_s/2}\hat{X}(f)e^{2\pi jfTn}df = \int_{-\pi}^{\pi}\hat{X}(\omega)e^{j\omega n} \frac{d \omega}{2 \pi}
+\]
+
 
 \subsubsection{Flat-top sampling}
 In practical sampling each sample is held for a short period of time ($\tau$).
