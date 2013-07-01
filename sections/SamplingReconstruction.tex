@@ -24,6 +24,17 @@ The spectrum $X(f)$ of the sampled signal will be replicated
 \[ \hat{X}(f) = \frac{1}{T} \sum_{m=-\infty}^{\infty}X(f-m f_s)\]
 
 
+\subsubsection{DSP Frequency Units}
+A sampled sinusoid takes the form in these units:
+\[
+	e^{2\pi jfTn} = e^{2\pi j (f/f_s)n} = e^{j\Omega Tn} = e^{j\omega n}
+\]
+
+\begin{center}
+\input{tikz/frequencyUnits}
+\end{center}
+
+
 \subsubsection{Flat-top sampling}
 In practical sampling each sample is held for a short period of time ($\tau$).
 \[ x_{flat}(t) =  \sum_{n=-\infty}^{\infty}x(nT)p(t - nT) ~~~ p(t) \text{: flat-top pulse with duration } \tau \]
