@@ -1,6 +1,5 @@
 \section{Transfer Functions\buch{Chapter 6}}
-\buchSeite{223,224}
-IIR-Form:
+\subsection{IIR-Form:\buchSeite{223,224}}
 \[ 
 	H(z) = \frac{N(z)}{D(z)}
 		= \frac{b_0 + b_1 z^{-1} + b_2 z^{-2} + \ldots + b_N z^{-N}}{1 + a_1 z^{-1} + a_2 z^{-2} + \ldots + a_M z^{-M} }
@@ -55,7 +54,7 @@ Example: $y(n) = 0.25 \cdot y(n-2) + x(n) $
 	3dB width & $\Delta\omega \simeq 2(1-R)$ \qquad $=:R$ is the pole
 \end{tabularx}\\ \\
 
-\textbf{2 pole conjugate filter}\buchSeite{244-246}
+\subsubsection{2 pole conjugate filter\buchSeite{244-246}}
 
 \begin{tabularx}{1\textwidth}{l X}
 	poles: & $ p = R e^{j\omega}$ \qquad and \qquad $ p^* = R e^{-j\omega}$
@@ -70,7 +69,7 @@ Example: $y(n) = 0.25 \cdot y(n-2) + x(n) $
 	& $G = (1-R)\sqrt{1-2R\cos(2\omega_0)+ R^2}$
 \end{tabularx}\\ \\
 
-\textbf{2 pole 2 zero filter}\buchSeite{228,249}
+\subsubsection{2 pole 2 zero filter\buchSeite{228,249}}
 
 \begin{tabularx}{1\textwidth}{l X}
 	poles: & $ p = R e^{j\omega}$ \qquad and \qquad $ p^* = R e^{-j\omega}$
@@ -85,8 +84,7 @@ Example: $y(n) = 0.25 \cdot y(n-2) + x(n) $
 	& $b_1 = -2r\cos(\omega_0)$ \qquad; \qquad $b_2 = r^2$
 \end{tabularx}\\ \\
 
-\textbf{Notch and Comb Filter}\buchSeite{249-251}
-\\
+\subsubsection{Notch and Comb Filter\buchSeite{249-251}}
 The zeros of the filters located on the unit circle and the poles are in the unit
 circle.
 
