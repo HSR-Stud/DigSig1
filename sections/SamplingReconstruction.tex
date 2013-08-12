@@ -1,5 +1,5 @@
 \section{Sampling and Recostruction\buch{Chapter 1}}
-\subsection{Analog Signals}
+\subsection{Analog Signals\buchSeite{2}}
 \begin{tabularx}{\linewidth}{|l|X|}
 	\hline
 	Fourier transform & $X(\Omega) = \int\limits_{-\infty}^{\infty} x(t)e^{-j\Omega t}dt \qquad \Omega = 2\pi f $ \\
@@ -9,7 +9,7 @@
 \end{tabularx}
 
 \subsection{Digital Signals}
-\subsubsection{Sampling Theorem}
+\subsubsection{Sampling Theorem\buchSeite{4-6}}
 Sampling means that the analog signal is periodically measured with a sampling interval T. The discrete index $n$, relates to
 the time $t$ as follows:
 \[ t = nT \qquad n = 0,1,2,\ldots \]
@@ -24,7 +24,7 @@ The spectrum $X(f)$ of the sampled signal will be replicated
 \[ \hat{X}(f) = \frac{1}{T} \sum_{m=-\infty}^{\infty}X(f-m f_s)\]
 
 
-\subsubsection{DSP Frequency Units}
+\subsubsection{DSP Frequency Units\buchSeite{29-30}}
 A sampled sinusoid takes the form in these units:
 \[
 	e^{2\pi jfTn} = e^{2\pi j (f/f_s)n} = e^{j\Omega Tn} = e^{j\omega n}
@@ -34,7 +34,7 @@ A sampled sinusoid takes the form in these units:
 \input{tikz/frequencyUnits}
 \end{center}
 
-\subsubsection{Discrete-Time Fourier Transform}
+\subsubsection{Discrete-Time Fourier Transform\buchSeite{31}}
 \[
 	\hat{X}(f) = \sum_{n=-\infty}^{\infty} x(nT)e^{-2\pi jfTn}
 \]
@@ -52,7 +52,7 @@ The spectrum of the filter looks like this
 \[ |P(f)| = \tau \left| \frac{sin(\pi f \tau)}{\pi f \tau} \right| \]
 % TODO maybe add plot
 
-\subsubsection{Aliasing}
+\subsubsection{Aliasing\buchSeite{38}}
 If the signal frequency $f$ is outside the nyquist interval, the signal will be
 aliased with $f - f_{sampling}$.\\
 \textbf{Example:} $sin(8\pi t)$ (signal frequency $f=4$) sampled at a rate of

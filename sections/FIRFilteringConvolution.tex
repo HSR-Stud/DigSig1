@@ -1,6 +1,6 @@
 \section{FIR Filtering and Convolution\buch{Chapter 4}}
 \subsection{Block Processing Methods}
-\subsubsection{Convolution}
+\subsubsection{Convolution\buchSeite{121}}
 \begin{tabular}{|l|l|l|}
 	\hline
 	$y(n)$		& direct and LTI forms of convolution	& $y(n)=\sum\limits_m h(m)x(n-m)=\sum\limits_m x(m)h(n-m)$
@@ -9,7 +9,7 @@
 	\\ \hline
 \end{tabular}
 
-\subsubsection{Direct Form}
+\subsubsection{Direct Form\buchSeite{123}}
 \begin{tabular}{|l|l|}
 	\hline
 	$h$		& $h=[h_0,h_1, \ldots , h_M]$
@@ -23,7 +23,7 @@
 \end{tabular}
 
 
-\subsubsection{Convolution Table}
+\subsubsection{Convolution Table\buchSeite{126}}
 
 \begin{tikzpicture}
 %lines
@@ -57,7 +57,7 @@
 $y=[y_0, y_1, y_2, y_3, y_4, y_5, y_6, y_7]$
 
 
-\subsubsection{LTI Form}
+\subsubsection{LTI Form\buchSeite{127}}
 \begin{tabular}{c|cccccccc|}
 	& $h_0$ & $h_1$ & $h_2$ & $h_3$ & 0 & 0 & 0 & 0 \\
 	\hline
@@ -74,7 +74,7 @@ $y=[y_0, y_1, y_2, y_3, y_4, y_5, y_6, y_7]$
 \]
 
 
-\subsubsection{Matrix Form}
+\subsubsection{Matrix Form\buchSeite{129}}
 The convolutional eqations can also be written in the linear matrix form:
 \[
 	y = H  x	\qquad \text{or} \qquad y = Xh
@@ -121,7 +121,7 @@ Example:
 \resetArrayStretch
 
 
-\subsubsection{Flip-and-Slide Form}
+\subsubsection{Flip-and-Slide Form\buchSeite{131}}
 \begin{tikzpicture}
 
 \foreach \h in {0,...,3} {
@@ -174,7 +174,7 @@ Example:
 	y(n) = h_0x_n + h_1x_{n-1}+\cdot\cdot\cdot+h_Mx_{n-M}
 \]
 
-\subsubsection{Overlap-Add Form}
+\subsubsection{Overlap-Add Form\buchSeite{143,144}}
 \begin{enumerate}
   \item Divide input $x$ into smaller blocks $x_0, x_1, \ldots$ of length $L$.
   If the input is not long enough for a last complete block, the last block is
@@ -199,7 +199,7 @@ Example:
 \end{tabular}
 
 
-\subsubsection{Transient and Steady-State Behavior}
+\subsubsection{Transient and Steady-State Behavior\buchSeite{132,133}}
 
 \begin{tabular}{|l|l|}
 	\hline
@@ -228,7 +228,7 @@ on the value of the output index $n$:
 \]
 
 
-\subsubsection{Convolution of Infinite Sequences}
+\subsubsection{Convolution of Infinite Sequences\buchSeite{134}}
 Three cases:
 \setArrayStretch{1}
 \begin{enumerate}

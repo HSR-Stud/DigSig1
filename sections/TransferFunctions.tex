@@ -1,5 +1,5 @@
 \section{Transfer Functions\buch{Chapter 6}}
-
+\buchSeite{223,224}
 IIR-Form:
 \[ 
 	H(z) = \frac{N(z)}{D(z)}
@@ -19,7 +19,7 @@ Example: $y(n) = 0.25 \cdot y(n-2) + x(n) $
 	Y(z) = 0.25z^{-2}Y(z) + X(z)
 \]
 
-\subsection{Steady state response}
+\subsection{Steady state response\buchSeite{230-232}}
 \[\cos(\omega_0 n) \rightarrow \left|H(\omega_0) \right| \cos(\omega_0 n + \arg(H(\omega_0))) \]
 
 \[\sin(\omega_0 n) \rightarrow \left|H(\omega_0) \right| \sin(\omega_0 n + \arg(H(\omega_0))) \]
@@ -32,7 +32,7 @@ Example: $y(n) = 0.25 \cdot y(n-2) + x(n) $
 	\\ \hline
 \end{tabularx}\\ \\
 
-\subsection{Transient Response}
+\subsection{Transient Response\buchSeite{232}}
 \begin{tabularx}{1\textwidth}{l X}
 	complex sinuousness: & $x(n) = e^{j \omega_0 n} \Rightarrow X(Z) = \frac{1}{1-e^{j \omega_0 n} z^{-1}} $
 	\\ 
@@ -42,7 +42,7 @@ Example: $y(n) = 0.25 \cdot y(n-2) + x(n) $
 	$\left| 1-a e^{-j\omega}\right| = \sqrt{1-2a\cos(\omega) + a^2}$
 \end{tabularx}\\ \\
 
-\subsection{Unit Step Response}
+\subsection{Unit Step Response\buchSeite{239}}
 \begin{tabularx}{1\textwidth}{l X}
 	DC-Gain: & $H(0) = H(z)|_{z=1}= \sum\limits_{n=0}^{\infty}h(n) $
 	\\
@@ -50,12 +50,12 @@ Example: $y(n) = 0.25 \cdot y(n-2) + x(n) $
 \end{tabularx}\\ \\
 
 
-\subsection{Pole/Zero Design}
+\subsection{Pole/Zero Design\buchSeite{242}}
 \begin{tabularx}{1\textwidth}{l X}
 	3dB width & $\Delta\omega \simeq 2(1-R)$ \qquad $=:R$ is the pole
 \end{tabularx}\\ \\
 
-\textbf{2 pole conjugate filter}
+\textbf{2 pole conjugate filter}\buchSeite{244-246}
 
 \begin{tabularx}{1\textwidth}{l X}
 	poles: & $ p = R e^{j\omega}$ \qquad and \qquad $ p^* = R e^{-j\omega}$
@@ -70,7 +70,7 @@ Example: $y(n) = 0.25 \cdot y(n-2) + x(n) $
 	& $G = (1-R)\sqrt{1-2R\cos(2\omega_0)+ R^2}$
 \end{tabularx}\\ \\
 
-\textbf{2 pole 2 zero filter}
+\textbf{2 pole 2 zero filter}\buchSeite{228,249}
 
 \begin{tabularx}{1\textwidth}{l X}
 	poles: & $ p = R e^{j\omega}$ \qquad and \qquad $ p^* = R e^{-j\omega}$
@@ -85,7 +85,7 @@ Example: $y(n) = 0.25 \cdot y(n-2) + x(n) $
 	& $b_1 = -2r\cos(\omega_0)$ \qquad; \qquad $b_2 = r^2$
 \end{tabularx}\\ \\
 
-\textbf{Notch and Comb Filter}
+\textbf{Notch and Comb Filter}\buchSeite{249-251}
 \\
 The zeros of the filters located on the unit circle and the poles are in the unit
 circle.

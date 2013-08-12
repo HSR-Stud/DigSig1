@@ -1,5 +1,5 @@
 \section{Discret-Time Systems\buch{Chapter 3}}
-\subsection{Linearity and time invariance}
+\subsection{Linearity and time invariance\buchSeite{100-102}}
 \begin{tabular}{ll}
 \textbf{Linearity:} & If $y(n) = x(n)$ then $y(2n)=2x(n)$\\
 testing: & $y(n)=[x_1(n) + x_2(n)] = y_1(n) + y_2(n)$\\
@@ -7,14 +7,14 @@ testing: & $y(n)=[x_1(n) + x_2(n)] = y_1(n) + y_2(n)$\\
 testing: & $x_D(n)=x(n-D)$ and $y_D(n)=y(n-D)$\\
 \end{tabular}
 
-\subsection{Impulse response}
+\subsection{Impulse response\buchSeite{103-105}}
 \begin{tabular}{ll}
 	\textbf{LTI form:}		& $y(n) = \sum\limits_m x(m)h(n-m)$ \\
 	\textbf{direct form:}	& $y(n) = \sum\limits_m h(m)x(n-m)$
 \end{tabular}
 
 
-\subsection{FIR and IIR filters}
+\subsection{FIR and IIR filters\buchSeite{105,106}}
 \begin{tabularx}{0.75\textwidth}{|l|X|X|}
 	\hline
 	$M$	& filter order				& 
@@ -30,14 +30,14 @@ testing: & $x_D(n)=x(n-D)$ and $y_D(n)=y(n-D)$\\
 \end{tabularx}
 
 
-\subsection{Causality}
+\subsection{Causality\buchSeite{112}}
 \begin{tabular}{ll}
 	\textbf{causal} & right sided signals, they are non-zero for $n>=0$ \\
 	\textbf{anticausal} & left sided signals, they are non-zero for $n<=-1$ \\
 	\textbf{mixed signals} & double-sided signals \\
 \end{tabular}
 
-\subsubsection{Anticausal to Causal}
+\subsubsection{Anticausal to Causal\buchSeite{113}}
 Delay the system by $D$ to move the negative time from $n=-D$ to $0$
 \begin{align*}
 h_D(n) =& h(n-D)\\
@@ -46,7 +46,7 @@ y_D(n) = & \sum\limits_{m}h_D(m)x(n-m) = \sum\limits_{m}h(m-D)x(n-m) \\
 \xrightarrow{m := k+D}& \sum\limits_{k}h(k)x(n-k-D) = y(n-D)
 \end{align*}
 
-\subsection{Stability}
+\subsection{Stability\buchSeite{115}}
 \textbf{Stability Condition} $\sum\limits_{n=-\infty}^{\infty}\left| h(n)
 \right| < \infty$\\
 An LTI system is stable, if a bounded input can only generate bounded outputs.\\
