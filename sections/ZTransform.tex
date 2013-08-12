@@ -48,21 +48,17 @@ strictly outside the unit circle.
 \[ 1 < \min\limits_{i}|p_i| \]
 
 \subsection{Frequency Spectrum\buchSeite{196-210}}
-\begin{align*}
-	X(\omega)&= \sum\limits_{n=-\infty}^{\infty} x(n)e^{-j\omega n} \quad \text{(DTFT)} \
-	\qquad \omega = \frac{2 \pi f}{f_s} \qquad -\pi \leq \omega \leq \pi
-\end{align*}
-
-\begin{align*}
-	x(n)&= \frac{1}{2\pi} \int\limits_{-\pi}^{\pi} X(\omega)e^{j\omega n} d\omega \quad \text{(inverse DTFT)} 
-\end{align*}
-
-Another useful relationship is Parseval’s equation, which relates the total energy of
-a sequence to its spectrum:
-
-\begin{align*}
-	\sum_{n=-\infty}^{\infty} |x(n)|^2&= \frac{1}{2\pi} \int\limits_{-\pi}^{\pi} |X(\omega)|^2 d\omega \quad \text{(Parseval)} 
-\end{align*}
+\begin{align}
+z=e^{-j\omega} && \omega = \frac{2 \pi f}{f_s} \notag\\
+X(\omega)= \sum\limits_{n=-\infty}^{\infty} x(n)e^{-j\omega n} &&  \text{(DTFT)} \notag \\
+H(\omega)= \sum\limits_{n=-\infty}^{\infty} h(n)e^{-j\omega n} &&  \text{(frequency response)} \notag \\
+ -\pi \leq \omega \leq \pi && \text{nyquist interval}\notag\\
+x(n)= \frac{1}{2\pi} \int\limits_{-\pi}^{\pi} X(\omega)e^{j\omega n} d\omega &&\text{(inverse DTFT)} \notag
+\end{align}
+Another useful relationship is Parseval’s equation, which relates the total energy of a sequence to its spectrum: 
+\begin{align}
+\sum_{n=-\infty}^{\infty} |x(n)|^2= \frac{1}{2\pi} \int\limits_{-\pi}^{\pi} |X(\omega)|^2 d\omega && \text{(Parseval)} \notag
+\end{align}
 
 Some Z-Transforms: \\ \\
 \begin{tabularx}{0.6\textwidth}{|X|X|X|}
@@ -82,13 +78,15 @@ Some Z-Transforms: \\ \\
 	$-a^n u(-n-1)$ & $\frac{1}{1 - az^{-1}}$ & $|z|<a$ \\
 	\hline
 \end{tabularx}\\ \\
+\subsection{Inverse z-Transforms\buchSeite{202-204}}
+%ToDo this subsection
 
-Euler: 
+\textbf{Euler:}
 
-\begin{align*}
-	\cos(\alpha) = \frac{e^{j\alpha} + e^{-j\alpha}}{2} \\
-	\sin(\alpha) = \frac{e^{j\alpha} - e^{-j\alpha}}{2j} \\
-	e^{j\frac{\pi}{2}n} = j^n\\
-	e^{-j\frac{\pi}{2}n} = (-j)^n\\
-\end{align*}
-
+\begin{align}
+\cos(\alpha) = \frac{e^{j\alpha} + e^{-j\alpha}}{2}
+&& \sin(\alpha) = \frac{e^{j\alpha} - e^{-j\alpha}}{2j} && 
+    {e}^{\pm jn\pi} = \cos{n\pi} \pm j \sin{n\pi} \notag\\
+e^{j\frac{\pi}{2}n} = j^n & & e^{-j\frac{\pi}{2}n} = (-j)^n &&
+e^{jn\pi}=e^{-jn\pi}=(-1)^n \notag
+\end{align}
