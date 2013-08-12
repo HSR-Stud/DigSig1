@@ -68,18 +68,18 @@ Performance of oversampling noise shaping quantizers:
 	& $\frac{R}{2} - Q$ 
 	\\ \hline
 	two's complement
-	& $x_Q = R(\overline{b_1} 2^{-1} + b_2 2^{-2} + \ldots + b_B 2^{-B} - 0.5)$
+	& $x_Q = R(\overline{b_1} 2^{-1} + b_2 2^{-2} + \ldots + b_B 2^{-B} - 0.5) \qquad (\overline{b_1}=1-b_1$
 	& 
 	& 
 	\\ \hline
 \end{tabularx}
 
 
-\subsection{A/D converters\buchSeite{79}}
-\subsection{Analog and digital dither}
+\subsection{A/D converters\buchSeite{75}}
+\subsection{Analog and digital dither\buchSeite{84-86}}
 Dither is a small white noise signal that is added to the input signal befor quantization. The variance of the noise is $\sigma_v^2$ and the variance of the quantization is $\sigma_e^2$. The total variance is :
 
-\[ \sigma_{\epsilon}^2 = \sigma_e^2 + \sigma_v^2 \]
+\[ \sigma_{\epsilon}^2 = \sigma_e^2 + \sigma_v^2 =\frac{1}{12}Q^2+\sigma_v^2\]
 
 \begin{equation*}
 	\sigma_{\epsilon}^2 = 
