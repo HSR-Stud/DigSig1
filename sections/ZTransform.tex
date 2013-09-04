@@ -60,6 +60,23 @@ Another useful relationship is Parseval’s equation, which relates the total en
 \sum_{n=-\infty}^{\infty} |x(n)|^2= \frac{1}{2\pi} \int\limits_{-\pi}^{\pi} |X(\omega)|^2 d\omega && \text{(Parseval)} \notag
 \end{align}
 
+Some DTFT-Transforms: \\ \\
+\begin{tabularx}{0.6\textwidth}{|l|X|}
+	\hline
+	$\delta[n]$ &	$X_{2\pi}(\omega) = 1$ \\
+	\hline 	
+	$\delta[n-M]$ &	$X_{2\pi}(\omega) = e^{-i\omega M}$ \\
+	\hline
+	$u[n]$ & $X_{2\pi}(\omega) = \frac{1}{1-e^{-i \omega}} + \pi \sum_{k=-\infty}^{\infty} \delta (\omega - 2\pi k) $ \\ & 	
+	$X(\omega) = \frac{1}{1-e^{-i \omega}} + \pi \cdot \delta (\omega) $ \\
+	\hline
+	$\cos(a n) $ & $X(\omega) = \pi [\delta (\omega +a)+\delta (\omega -a)],     -\pi < a < \pi $\\ &
+	$X_{2\pi}(\omega) = \pi \sum_{k=-\infty}^{\infty} \left[ \delta (\omega - a - 2\pi k) + \delta (\omega + a + 2\pi k) \right] $ \\
+	\hline
+	$\sin(a n) $ &	$X_{2\pi}(\omega) = \frac{\pi}{i} \sum_{k=-\infty}^{\infty} \left[ \delta (\omega - a - 2\pi k) - \delta ( \omega + a + 2\pi k) \right] $  	\\
+	\hline
+\end{tabularx} \\ \\
+
 Some Z-Transforms: \\ \\
 \begin{tabularx}{0.6\textwidth}{|X|X|X|}
 	\hline
