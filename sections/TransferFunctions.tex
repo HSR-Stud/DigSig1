@@ -13,32 +13,73 @@ if $D(z) = 1$, the IIR Form can be reduced to a FIR Filter:
 Example: find $H(z)$ for $h(n) = \left[1,3,4,5\right]$
 \[ H(z) = 1 + 3z^{-1} + 4z^{-2} + 5z^{-3}\]
 
-Example: $y(n) = 0.25 \cdot y(n-2) + x(n) $
+Example: $y(n) = 0.25 \cdot y(n-2) + x(n) $ \qquad (I/O difference equation)
 \[
 	Y(z) = 0.25z^{-2}Y(z) + X(z)
 \]
 
-\subsection{Steady state response\buchSeite{230-232}}
-\[\cos(\omega_0 n) \rightarrow \left|H(\omega_0) \right| \cos(\omega_0 n + \arg(H(\omega_0))) \]
+\begin{multicols}{3}
+  \textbf{direct form \buchSeite{217}}\\
+  \includegraphics[width=6cm]{./picture/direct_form}
+  
+  \columnbreak
+  
+  \textbf{canonical form \buchSeite{220}}\\
+  \includegraphics[width=6cm]{./picture/canonical_form}
+  
+  \columnbreak
+  
+  \textbf{transposed form \buchSeite{222}}\\
+  \includegraphics[width=6cm]{./picture/transposed_form}
+  
+  \textbf{Transposition rules:} \\
+  replace adders by nodes, \\
+  nodes by adders, \\
+  reversing all flows and \\
+  exchanging input with output
+\end{multicols}
 
-\[\sin(\omega_0 n) \rightarrow \left|H(\omega_0) \right| \sin(\omega_0 n + \arg(H(\omega_0))) \]
+\subsection{Steady state response\buchSeite{229-232}}
+\begin{align*}
+  \cos(\omega_0 n) \rightarrow \left|H(\omega_0) \right| \cos(\omega_0 n + \arg(H(\omega_0))) &&
+  \sin(\omega_0 n) \rightarrow \left|H(\omega_0) \right| \sin(\omega_0 n + \arg(H(\omega_0))) \\
+  e^{j\omega_0 n} \rightarrow H(\omega_0)e^{j\omega_0 n} = |H(\omega_0)| e^{j\omega_0 n + j argH(\omega_0)}
+\end{align*}
+
 
 \begin{tabularx}{0.6\textwidth}{|l|X|}
 	\hline
-	phase delay & $d(\omega) = - \frac{\arg(H(\omega))}{\omega}$\ \qquad $\arg H(\omega = -\omega d(\omega))$
+	phase delay & $d(\omega) = - \frac{\arg(H(\omega))}{\omega}$\ \qquad $\arg H(\omega) = -\omega d(\omega)$
 	\\ \hline 
 	group delay & $d_g(\omega) = -\frac{d}{d\omega}(\arg(H(\omega)))$	
 	\\ \hline
 \end{tabularx}\\ \\
 
 \subsection{Transient Response\buchSeite{232}}
-\begin{align}
-&\text{complex sinuousness:} & & x(n) = e^{j \omega_0 n} \cdot u(n) && \Rightarrow && X(Z) = \frac{1}{1-e^{j \omega_0} z^{-1}} && ROC |z| > |e^{j\omega_0}|=1\notag\\ 
-&\text{effective time:} && n_{eff} = \frac{\ln \epsilon}{\ln \rho} &&\text{with: }& &\rho = \max\limits_{i}\left|p_i \right| &&\notag\\
-&\text{f and magnitude reponses:} && H(\omega)=\frac{b}{1-ae^{-j\omega}} &&\Rightarrow &&
-\left| H(\omega)\right| = \frac{b}{\sqrt{1-2a\cos(\omega) + a^2}} &&\notag\\
-&\text{requirement that:} && |H(\omega_0)|=1 &&&& &&\notag
-\end{align}\\
+\begin{align*}
+&\text{complex sinuousness:} 
+&& x(n) = e^{j \omega_0 n} \cdot u(n) 
+&& \Rightarrow 
+&& X(Z) = \frac{1}{1-e^{j \omega_0} z^{-1}} 
+&& ROC |z| > |e^{j\omega_0}|=1\\
+%
+&\text{effective time:} 
+&& n_{eff} = \frac{\ln \epsilon}{\ln \rho} 
+&&\text{with: }
+&&\rho = \max\limits_{i}\left|p_i \right| 
+&&\text{typ. } \epsilon = 1\% \\
+%
+&\text{time constant:}
+&&\tau = n_{eff}\cdot T &&&& &&\\
+%
+&\text{f and magnitude reponses:} 
+&& H(\omega)=\frac{b}{1-ae^{-j\omega}} 
+&&\Rightarrow 
+&&\left| H(\omega)\right| = \frac{b}{\sqrt{1-2a\cos(\omega) + a^2}} &&\\
+%
+&\text{requirement that:} 
+&& |H(\omega_0)|=1 &&&& &&
+\end{align*}\\
 $\left| 1-a e^{-j\omega}\right| = \sqrt{1-2a\cos(\omega) + a^2}$\\
 
 \subsection{Unit Step Response\buchSeite{239}}
@@ -46,12 +87,12 @@ $\left| 1-a e^{-j\omega}\right| = \sqrt{1-2a\cos(\omega) + a^2}$\\
 	DC-Gain: & $H(0) = H(z)|_{z=1}= \sum\limits_{n=0}^{\infty}h(n) $
 	\\
 	AC-Gain: & $H(\pi) = H(z)|_{z=-1}= \sum\limits_{n=0}^{\infty}(-1)^n h(n) $
-\end{tabularx}\\ \\
+\end{tabularx}
 
 
 \subsection{Pole/Zero Design\buchSeite{242,245}}
 \begin{tabularx}{1\textwidth}{Xll}
-	3dB width & $\Delta\omega \simeq 2(1-R)$ & $=:R$ is the pole \\
+	3dB width & $\Delta\omega \simeq 2(1-R)$ & $=:R$ is the magnitude of the pole \\
 	full width at half maximum of the magnitude squared response & $|H(\omega)|^2=\frac{1}{2}|H(\omega_0)|^2=\frac{1}{2}$&
 \end{tabularx}\\ \\
 
@@ -68,11 +109,12 @@ $\left| 1-a e^{-j\omega}\right| = \sqrt{1-2a\cos(\omega) + a^2}$\\
 	filter impulse Response & $h(n) = \frac{G}{\sin(\omega_0)}R^n \sin(\omega_0 n + \omega_0)$
 	\\ 
 	& $G = (1-R)\sqrt{1-2R\cos(2\omega_0)+ R^2}$
-\end{tabularx}\\ \\
+\end{tabularx}
+
 
 \subsubsection{2 pole 2 zero filter\buchSeite{228,249}}
 
-\begin{tabularx}{1\textwidth}{l X}
+\begin{tabular}[b]{l l}
 	poles: & $ p = R e^{j\omega}$ \qquad and \qquad $ p^* = R e^{-j\omega}$
 	\\ 
 	zeros: & $ z_1 = r e^{j\omega}$ \qquad and \qquad $ z_1^* = r e^{-j\omega}$
@@ -83,21 +125,48 @@ $\left| 1-a e^{-j\omega}\right| = \sqrt{1-2a\cos(\omega) + a^2}$\\
 	Parameter: & $a_1 = -2R\cos(\omega_0)$ \qquad; \qquad $a_2 = R^2$
 	\\ 
 	& $b_1 = -2r\cos(\omega_0)$ \qquad; \qquad $b_2 = r^2$
-\end{tabularx}\\ \\
+\end{tabular}
+\includegraphics[width=7cm]{./picture/pole_zero_filter}
 
+\newpage
 \subsubsection{Notch and Comb Filter\buchSeite{249-251}}
 The zeros of the filters located on the unit circle and the poles are in the unit
 circle.
 
-\begin{tabularx}{1\textwidth}{l X}
+\begin{tabular}{l l}
 	Transfer function: & $H(z) = \frac{N(z)}{D(z)} $
 	\\
-	& $N(z) = \prod\limits_{i=1}^{M}(1- e^{j\omega_i}z^{-1)} $ \qquad (notch polynomial)
-	\\
-	& $D(z) = N(\rho^{-1})  = \prod\limits_{i=1}^{M}(1- e^{j\omega_i}\rho z^{-1)} $
-	\\
+  & $D(z) = N(\rho^{-1})  = \prod\limits_{i=1}^{M}(1- e^{j\omega_i}\rho z^{-1)} $	\\
+  
+  Notch filter:	
+	& $N(z) = \prod\limits_{i=1}^{M}(1- e^{j\omega_i}z^{-1)} $ \\
 	& $H(z) = \frac{N(z)}{(N\rho^{-1}z)}= \frac{1+b_1 z^{-1} + b_2z^{-2} + \ldots + b_M z^{-M}}
 	{1+\rho b_1 z^{-1} + \rho^2 b_2z^{-2} + \ldots + \rho^M b_M z^{-M}} $\\
 	&$a_i=\rho^ib_i \qquad$ mit $\qquad i=1,2,\ldots,M$ \\
-	\end{tabularx}\\ \\
+	
+	Comb filter:
+	& $N(z) = \prod\limits_{i=1}^{M}(1- e^{j\omega_i}rz^{-1)} $ \\
+	& $H(z) = \frac{N(r^{-1}z)}{N(\rho^{-1}z)} 
+	= \frac{1+rb_1z^{-1}+\ldots+r^Mb_Mz^{-M}}{1-\rho b_1z^{-1}+\ldots+\rho^Mb_Mz^{-M}}$ \qquad with $|r| < |\rho| < 1$ 
+	\end{tabular}
+	
+\subsection{Deconvolution, Inverse Filters and Stability \buchSeite{254-259}}
+\begin{tabular}{ll}
+  & $H_{inv}(z) = \frac{1}{H(z)} = \frac{D(z)}{N(z)}$ \\
+  Deconvolution: &  $x(n) = h_{inv}(n) * y(n)$ \\
+  & $\hat{x}(n) = h_{inv}(n) * y(n) = x(n) + \hat{\nu}(n)$ \\
+  Filtered noise: & $\hat{\nu}(n) = h_{inv}(n) * \nu (n)$
+\end{tabular}\\
+
+Because $H_{inv}(z)$ can have poles outside the unit circle, the stable inverse z-transform $h_{inv}(n)$ will
+necessarily be anticausal. To make a causal system, by clipping of the anticausal tail of the impulse response by a 
+time $n = -D$ and delayed by $D$ time units.
+
+$\tilde{h}(n) = \left\lbrace\begin{matrix}
+  h_{inv}(n) & \text{if } n \geq -D \\
+  0 & \text{if } n < -D
+\end{matrix}\right.$ \\
+
+$y(n)$ is bounded by some maximal value $|y(n)| \leq A$, so the deconvolution error can be calculated by\\
+$|x(n) - \tilde{x}(n)| \leq A \sum\limits_{m=-\infty}^{-D-1} |h_{inv}(m)|$
 
