@@ -29,3 +29,4 @@ revision.tex
 *.mtc
 *.mtc0
 *.fls
+/*.tex.bak
