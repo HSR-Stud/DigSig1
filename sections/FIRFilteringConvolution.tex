@@ -3,7 +3,7 @@
 \subsubsection{Convolution\buchSeite{121}}
 
 \begin{align}
-& \text{record of duration} && T_L=LT && \text{Signal Samples} && L=T_Lf_s \notag \\
+& \text{duration of data record} && T_L=LT && \text{Signal Samples} && L=T_Lf_s \notag \\
 & x(n) && n=0,1,\ldots,L-1 && \text{sampling Time} && T \notag
 \end{align}
 
@@ -15,6 +15,7 @@
 	\\ \hline
 \end{tabular}
 
+\begin{multicols}{2}
 \subsubsection{Direct Form\buchSeite{123}}
 \begin{tabular}{|l|l|}
 	\hline
@@ -30,6 +31,7 @@
 	\\ \hline 
 \end{tabular}
 
+\columnbreak
 
 \subsubsection{Convolution Table\buchSeite{126}}
 
@@ -64,9 +66,10 @@
 
 $y=[y_0, y_1, y_2, y_3, y_4, y_5, y_6, y_7]$
 
+\end{multicols}
 
 \subsubsection{LTI Form\buchSeite{127}}
-\begin{tabular}{c|cccccccc|}
+\begin{tabular}{c|c:c:c:c:c:c:c:c|}
 	& $h_0$ & $h_1$ & $h_2$ & $h_3$ & 0 & 0 & 0 & 0 \\
 	\hline
 	$x_0$ & $x_0h_0$ & $x_0h_1$ & $x_0h_2$ & $x_0h_3$ & 0 & 0 & 0 & 0 \\
@@ -81,17 +84,18 @@ $y=[y_0, y_1, y_2, y_3, y_4, y_5, y_6, y_7]$
 & y(n) = \sum\limits_{m=max(0,n-M)}^{min(n,L-1)} x(m)h(n-m) && \text{LTI-form}\notag
 \end{align}
 
+\newpage
 
 \subsubsection{Matrix Form\buchSeite{129}}
 The convolutional eqations can also be written in the linear matrix form:
 \[
 	y = H  x	\qquad \text{or} \qquad y = Xh
 \]
-where $H$ is built out of the filter's impulse response $h$ or the signal matrix $X$ is built out of the input signal. 
-The filter matrix $H$, respectivly the signal matrix $X$, must be rectangular with dimensions
+where $H$ (Toeplitz Matrix) is built out of the filter's impulse response $h$ or the signal matrix $X$ is built 
+out of the input signal. The filter matrix $H$, respectivly the signal matrix $X$, must be rectangular with dimensions
 \[
-	L_y \times L_x = (L + M)\times L \qquad \text{or} \qquad
-	L_y \times L_h = (L + M)\times (M + 1)
+	\underbrace{L_y \times L_x = (L + M)\times L}_{\text{dimension of H}} \qquad \text{or} \qquad
+	\underbrace{L_y \times L_h = (L + M)\times (M + 1)}_{\text{dimension of X}}
 \]
 
 Example:
@@ -194,13 +198,13 @@ Example:
   moved to the right with an offset of $L$ compared to $y_n$.
 \end{enumerate}
 
-example:
+example: with $L=3$ and $M=3$
 \begin{align}
 & y_0=h\ast x_0 && y_1=h\ast x_1 && y_2=h\ast x_2 && x={\underbrace{n_0,n_1,n_2},\underbrace{n_3,n_4,n_5},\underbrace{n_6,n_7,n_8}}\notag \\
 & && && && \qquad\quad \ x_0 \qquad\quad \ x_1 \qquad\quad \ x_2 \notag
 \end{align}\\
 
-\begin{tabular}{c|cccccccccccc}
+\begin{tabular}{c|cccccccccccc}  
 	n & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11\\
 	\hline
 	$y_0$ & $y_{0,0}$ & $y_{0,1}$ & $y_{0,2}$ & $y_{0,3}$ & $y_{0,4}$ & $y_{0,5}$ &
@@ -216,7 +220,7 @@ example:
 
 
 \subsubsection{Transient and Steady-State Behavior\buchSeite{132,133}}
-
+\begin{multicols}{2}
 \begin{tabular}{|l|l|}
 	\hline
 	input-on trainsients	& $ 0 \leq n < M $
@@ -225,7 +229,10 @@ example:
 	\\ \hline
 	input-off transient		& $ L-1 < n \leq L-1+M $
 	\\ \hline
-\end{tabular}\newline
+\end{tabular}
+\columnbreak
+\includegraphics[width=10cm]{./picture/transient_steady_state}
+\end{multicols}
 The DC gain of a stable filter is the steady-state value to which the output converges when the input is a unit step
 \[ y_{dc} = \sum_{m}^{} h(m) \qquad y_{dc}=\sum_{m=0}^{\infty}h(m) \]
 
@@ -235,10 +242,10 @@ on the value of the output index $n$:
 \[
 	y_n =
 		\left\{
-			\begin{array}{r l l l}
-				\sum\limits_{m=0}^{n} & h_m x_{n-m}		& \quad \text{if } 0 \leq n < M			& \quad \text{input-on} \\
-				\sum\limits_{m=0}^{M} & h_m x_{n-m}		& \quad \text{if } M \leq n \leq L-1	& \quad \text{steady state} \\
-				\sum\limits_{m=n-L+1}^{M} & h_m x_{n-m}	& \quad \text{if } L-1 < n \leq L-1+M	& \quad \text{input-off}
+			\begin{array}{l l l}
+				\sum\limits_{m=0}^{n} h_m x_{n-m}		& \quad \text{if } 0 \leq n < M			& \quad \text{input-on} \\
+				\sum\limits_{m=0}^{M} h_m x_{n-m}		& \quad \text{if } M \leq n \leq L-1	& \quad \text{steady state} \\
+				\sum\limits_{m=n-L+1}^{M} h_m x_{n-m}	& \quad \text{if } L-1 < n \leq L-1+M	& \quad \text{input-off}
 			\end{array}
 		\right.
 \]
@@ -254,7 +261,7 @@ Three cases:
 \end{enumerate}
 \resetArrayStretch
 
-Therefore, the direct form takes the following different forms:
+Therefore, the direct form takes the following different forms (See also \ref{geometricseries} \nameref{geometricseries}):
 \[
 	y_n =
 		\left\{
@@ -266,8 +273,9 @@ Therefore, the direct form takes the following different forms:
 		\right.
 \]
 
-See also \ref{geometricseries} \nameref{geometricseries}
+
 \subsection{Sample Processing Methods\buchSeite{146}}
-% ToDo this subsection
+  \includegraphics[width=5cm]{./picture/basic_blocks}
 \subsubsection{Pure Delays\buchSeite{147-151}}
 \subsubsection{FIR Filtering in Direct Form\buchSeite{152-156}}
+\subsubsection{Hardware realizations and circualr buffers \buchSeite{162}}
