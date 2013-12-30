@@ -1,8 +1,13 @@
 \section{Sampling and Recostruction\buch{Chapter 1}}
 \subsection{Analog Signals\buchSeite{2}}
+\begin{tabular}{llp{3cm}ll}
+  $\Omega = 2\pi f$ & $[\Omega] = \frac{rad}{s}$ & &
+  $\omega = \Omega T = \frac{2\pi f}{f_s}$ & $[\omega] = \frac{rad}{sample}$
+\end{tabular}
+
 \begin{tabularx}{\linewidth}{|l|X|}
 	\hline
-	Fourier transform & $X(\Omega) = \int\limits_{-\infty}^{\infty} x(t)e^{-j\Omega t}dt \qquad \Omega = 2\pi f $ \\
+	Fourier transform & $X(\Omega) = \int\limits_{-\infty}^{\infty} x(t)e^{-j\Omega t}dt$ \\
 	\hline
 	inverse Fourier transform & $ x(t) = \int\limits_{-\infty}^{\infty} X(\Omega)e^{j\Omega t} \frac{d\Omega}{2 \pi} $ \\
 	\hline
@@ -20,8 +25,8 @@ Sampling Theorem (Nyquist rate):
 Nyquist interval:
 \[ \left[-\frac{f_s}{2}, \frac{f_s}{2}\right] \]
 
-The spectrum $X(f)$ of the sampled signal will be replicated
-\[ \hat{X}(f) = \frac{1}{T} \sum_{m=-\infty}^{\infty}X(f-m f_s)\]
+%The spectrum $X(f)$ of the sampled signal will be replicated
+%\[ \hat{X}(f) = \frac{1}{T} \sum_{m=-\infty}^{\infty}X(f-m f_s)\]
 
 
 \subsubsection{DSP Frequency Units\buchSeite{29-30}}
@@ -34,16 +39,7 @@ A sampled sinusoid takes the form in these units:
 \input{tikz/frequencyUnits}
 \end{center}
 
-\subsubsection{Discrete-Time Fourier Transform\buchSeite{31}}
-\[
-	\hat{X}(f) = \sum_{n=-\infty}^{\infty} x(nT)e^{-2\pi jfTn}
-\]
-\[
-	x(nT) = \frac{1}{f_s} \int_{-f_s/2}^{f_s/2}\hat{X}(f)e^{2\pi jfTn}df = \int_{-\pi}^{\pi}\hat{X}(\omega)e^{j\omega n} \frac{d \omega}{2 \pi}
-\]
-
-
-\subsubsection{Flat-top sampling}
+\subsubsection{Flat-top sampling \buchSeite{30}}
 In practical sampling each sample is held for a short period of time ($\tau$).
 \[ x_{flat}(t) =  \sum_{n=-\infty}^{\infty}x(nT)p(t - nT) ~~~ p(t) \text{: flat-top pulse with duration } \tau \]
 
@@ -52,11 +48,28 @@ The spectrum of the filter looks like this
 \[ |P(f)| = \tau \left| \frac{sin(\pi f \tau)}{\pi f \tau} \right| \]
 % TODO maybe add plot
 
+\subsubsection{Discrete-Time Fourier Transform (DTFT)\buchSeite{31}}
+\[
+	\hat{X}(f) = \sum_{n=-\infty}^{\infty} x(nT)e^{-2\pi jfTn}
+\]
+\[
+	x(nT) = \frac{1}{f_s} \int_{-f_s/2}^{f_s/2}\hat{X}(f)e^{2\pi jfTn}df = \int_{-\pi}^{\pi}\hat{X}(\omega)e^{j\omega n} \frac{d \omega}{2 \pi}
+\]
+
+  A sampled signal has always a periodic spectrum, with its spectrum center at the multiplies of the sampling frequency.\\
+  $\hat{X}(f) = \frac{1}{T}\sum\limits_{m=-\infty}^{\infty}X(f-mf_s) \qquad \qquad
+  T\hat{X}(f) = X(f) \quad$ for $-\frac{f_s}{2} \leq f \leq \frac{f_s}{2}$
+
+
+
+
+
 \subsubsection{Aliasing\buchSeite{38}}
 If the signal frequency $f$ is outside the nyquist interval, the signal will be
 aliased with $f - f_{sampling}$.\\
 \textbf{Example:} $sin(8\pi t)$ (signal frequency $f=4$) sampled at a rate of
-$f_s=5Hz$ will be aliased to $sin(2\pi (f-f_s) t) = sin(2\pi (-1) t)$\\
+$f_s=5Hz$ will be aliased to $sin(2\pi (f-f_s) t) = sin(2\pi (-1) t)$
+\[ f_{ia} = f_i mod (f_s) = f_i + nf_s \]
 
 Is the signal frequency $f$ inside the nyquist interval, no aliasing will be
 perceived.
@@ -65,10 +78,40 @@ The stop frequency from the Antialiasing Prefilter is defined as:
 \[ f_{stop} = f_s - f_{pass} \]
 The attenuation of the Antialiasing Prefilter is:
 
-\[ A(f) = -20 \cdot \log_{10}{\left|\frac{H(f)}{H(f_0)}\right|} \]
+\[ A(f) = -20 \cdot \log_{10}{\left|\frac{H(f)}{H(f_0)}\right|} \qquad [dB] \]
 
 \[ A_{dB} = \alpha \log_{10}(\frac{f}{f_{cutoff}}) \qquad \alpha = \frac{dB}{dek} \]
 
 \[ A_{dB} = \beta \log_{2}(\frac{f}{f_{cutoff}}) \qquad \beta = \frac{dB}{okt} \]
 
 \[ A_{dB}(f) = A_{DAC}(f) + A_{POST}(f) \]
+
+$f_0$: reference frequency (typ. DC)
+
+\subsection{Reconstructors \buchSeite{42}}
+\subsubsection{Ideal reconstructor \buchSeite{43}}
+  \begin{tabular}{p{5cm}p{4cm}p{6cm}}
+	  $H(f) = \left\lbrace \begin{matrix}
+	    T & |f| \leq \frac{f_s}{2} \\
+	    0 & else
+	  \end{matrix}\right.$ & 
+    $h(t) = \dfrac{\sin(\pi f_s t)}{\pi f_s t}$ &
+    $y(t) = \sum\limits_{n=-\infty}^\infty y(nT)h(t-nT)$
+  \end{tabular}
+  
+
+\subsubsection{Staircase reconstructor \buchSeite{45}}
+  \begin{tabular}{p{8cm}p{8cm}}
+    $h(t) = u(t) - u(t-T) = \left\lbrace \begin{matrix}
+      1 & 0\leq t \leq T \\
+      0 & else
+    \end{matrix}\right.$ &
+    $H(f) = \dfrac{1}{2\pi j f}(1-e^{-2\pi f T}) = T \cdot \dfrac{\sin(\pi f T}{\pi f T}\cdot e^{-\pi j f T}$
+  \end{tabular}
+  
+  The higher spectral periodes don't get well suppressed, so an \textbf{anti-image postfilter} is needed.\\
+  \includegraphics[width=16cm]{./picture/compOfDSPSystem}
+  
+
+  
+  
