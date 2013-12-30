@@ -16,12 +16,42 @@
 										 = \int\limits_{0}^{\infty} \alpha[f_x(\alpha) + f_x(-\alpha)] d\alpha $
 	\\ \hline
 	variance $\sigma^2$ & 
-	$\sigma_x^2 = E\{ [x-E\{ x \}]^2 \} = E(x^2) - E(x)^2 = \int\limits_{-\infty}^{\infty}[\alpha - E\{ x \}]^2 f_x(\alpha) d\alpha $
+	$\sigma_x^2 = E\{ [x-E\{ x \}]^2 \} = E(x^2) - E(x)^2 = 
+	\int\limits_{-\infty}^{\infty}[\alpha - E\{ x \}]^2 f_x(\alpha) d\alpha $
+	\\ \hline
+	covariance &
+	$c_{xy} = Cov(x,y) = E\{(x-mx)(y-my)^*\} = E\{xy*\} - m_xm_y^*$
+	\\ \hline
+  correlation &
+  $r_{xy} = E\{xy^*\}  \qquad r_{xy} = 0 \rightarrow$ orthogonal
+	\\ \hline
+  correlation coefficient &
+  $\rho_{xy} = \dfrac{c_{xy}}{\sigma_x\sigma_y} \qquad -1\leq \rho_{xy} \leq 1$ \newline
+  for $\rho_{xy} = 0 \rightarrow$ uncorrelated
 	\\ \hline
 	autocorrelation function & 
-	$R_{XX}(k) = E[x(n+k)x(n)]$
+	$R_{XX}(k) = E[x(n+k)x(n)]	= \dfrac{1}{N}\sum\limits_{n=0}^{N-1-k} x(n+k)x(n) \newline
+	R_{XX}(k) = R_{XX}(-k)$
+	\\ \hline
+  power &
+  $\sigma_x^2 = R_{XX}(0) = E\{x(n)^2\} = \int\limits_{-\pi}^\pi S_{XX}(\omega)\dfrac{d\omega}{2\pi}$ \newline
+  $\sigma_y^2 = \int\limits_{-\pi}^\pi = S_{YY}(\omega)\dfrac{d\omega}{2\pi} = 
+  \sigma_x^2 \cdot \int\limits_{-\pi}^\pi |H(\omega)|^2 \dfrac{d\omega}{2\pi}$
 	\\ \hline
 	power spectrum & 
-	$S_{XX}(\omega) = \sum\limits_{k=-\infty}^{\infty} R_{XX}(k)e^{-j\omega k} \qquad \omega = \frac{2\pi f}{f_s} $
+	$S_{XX}(\omega) = \sum\limits_{k=-\infty}^{\infty} R_{XX}(k)e^{-j\omega k} 
+  \qquad \omega = \frac{2\pi f}{f_s} $ \newline
+  $S_{YY}(\omega) = |H(\omega)|^2 S_{XX}(\omega)$
+	\\ \hline
+	Joint distribution function &
+	$ F_{x(1),x(2)} (\alpha_1 , \alpha _2) = Pr\{ x(1) \leq \alpha _1 , x(2) \leq \alpha _2 \} $
+	\\ \hline
+	Joint density function &
+	$ f_{x(1), x(2)} (\alpha _1, \alpha _2) = \dfrac{\partial^2}{\partial \alpha _1 \partial \alpha _2} F_{x(1),x(2)} 
+	(\alpha_1 , \alpha_2) $
+	\\ \hline
+	Noise reduction ration (NRR) &
+	$NRR = \dfrac{\sigma_y^2}{\sigma_x^2} = \int\limits_{-\pi}^\pi |H(\omega)|^2 \dfrac{d\omega}{2\pi}
+	= \sum\limits_{n} h(n)^2$
 	\\ \hline
 \end{tabularx}
