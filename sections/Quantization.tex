@@ -1,7 +1,7 @@
 \section{Quantization\buch{Chapter 2}}
 
 \subsection{Quantization process\buchSeite{62}}
-\begin{tabularx}{0.75\textwidth}{|l|X|X|}
+\begin{tabularx}{\textwidth}{|l|X|X|}
 	\hline
 	$R$			& full-scale range		& $R = Q \cdot 2^B$
 	\\ \hline
@@ -9,7 +9,7 @@
 	\\ \hline
 	$Q$			& quantization width	& $Q = \frac{R}{2^B}$
 	\\ \hline
-	$e$			& quantization error	& $e_Q(nT) = x_Q(nT) -x(nT)$
+	$e$			& quantization error (quantization noise)	& $e_Q(nT) = x_Q(nT) -x(nT)$
 	\\ \hline
 	$e_{RMS}$	& root-mean-square error & $e_{RMS} = \frac{Q}{\sqrt{12}}$
 	\\ \hline
@@ -17,7 +17,7 @@
 	\\ \hline
 	$SNR$		& signal-to-noise ratio	& $SNR = 20 log_{10}\left(\frac{R}{Q}\right) = 6B\, dB$
 	\\ \hline
-	$\sigma_e^2$& average power / variance & $\sigma_e^2 = E[e^2(n)] = \frac{Q^2}{12}$
+	$\sigma_e^2$& average power / variance of quantization error & $\sigma_e^2 = E[e^2(n)] = \frac{Q^2}{12}$
 	\\ \hline
 \end{tabularx}
 
@@ -29,9 +29,9 @@
 	\\ \hline
 	$\Delta B$	& saved bits without noise shaping	& $\Delta B = 0.5 \cdot log_2(L)$ \\
 				& saved bits with noise shaping		& $\Delta B = (p + 0.5) \cdot log_2(L) - 0.5 \cdot log_2\left(\frac{\pi^{2p}}{2p + 1}\right)$ \\
-				& & $L = \left(\frac{2^{2\Delta B} \pi^{2p}}{2p+1}\right)^{\frac{1}{2p+1}}$
-				
+				& & $L = \left(\frac{2^{2\Delta B} \pi^{2p}}{2p+1}\right)^{\frac{1}{2p+1}}$	
 	\\ \hline
+	\multicolumn{3}{l}{p = order of the noise shaping filter}
 \end{tabularx}
 
 Performance of oversampling noise shaping quantizers:
@@ -90,3 +90,6 @@ Dither is a small white noise signal that is added to the input signal befor qua
 		\frac{4Q^2}{12} & Gaussian dither \\
 	\end{cases}
 \end{equation*}
+
+Goal of the dither is to eliminate quantization distortion and granulation and force the quantization error to look more
+like white noise.
