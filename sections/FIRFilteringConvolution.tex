@@ -87,12 +87,12 @@ $y=[y_0, y_1, y_2, y_3, y_4, y_5, y_6, y_7]$
 \newpage
 
 \subsubsection{Matrix Form\buchSeite{129}}
-The convolutional eqations can also be written in the linear matrix form:
+The convolutional equations can also be written in the linear matrix form:
 \[
 	y = H  x	\qquad \text{or} \qquad y = Xh
 \]
 where $H$ (Toeplitz Matrix) is built out of the filter's impulse response $h$ or the signal matrix $X$ is built 
-out of the input signal. The filter matrix $H$, respectivly the signal matrix $X$, must be rectangular with dimensions
+out of the input signal. The filter matrix $H$, respectively the signal matrix $X$, must be rectangular with dimensions
 \[
 	\underbrace{L_y \times L_x = (L + M)\times L}_{\text{dimension of H}} \qquad \text{or} \qquad
 	\underbrace{L_y \times L_h = (L + M)\times (M + 1)}_{\text{dimension of X}}
@@ -219,11 +219,11 @@ example: with $L=3$ and $M=3$
 \end{tabular}
 
 
-\subsubsection{Transient and Steady-State Behavior\buchSeite{132,133}}
+\subsubsection{Transient and Steady-State Behaviour\buchSeite{132,133}}
 \begin{multicols}{2}
 \begin{tabular}{|l|l|}
 	\hline
-	input-on trainsients	& $ 0 \leq n < M $
+	input-on transient	& $ 0 \leq n < M $
 	\\ \hline
 	steady state			& $ M \leq n \leq L-1 $
 	\\ \hline
@@ -278,4 +278,4 @@ Therefore, the direct form takes the following different forms (See also \ref{ge
   \includegraphics[width=5cm]{./picture/basic_blocks}
 \subsubsection{Pure Delays\buchSeite{147-151}}
 \subsubsection{FIR Filtering in Direct Form\buchSeite{152-156}}
-\subsubsection{Hardware realizations and circualr buffers \buchSeite{162}}
+\subsubsection{Hardware realizations and circular buffers \buchSeite{162}}

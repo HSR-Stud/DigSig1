@@ -1,4 +1,4 @@
-\section{Sampling and Recostruction\buch{Chapter 1}}
+\section{Sampling and Reconstruction\buch{Chapter 1}}
 \subsection{Analog Signals\buchSeite{2}}
 \begin{tabular}{llp{3cm}ll}
   $\Omega = 2\pi f$ & $[\Omega] = \frac{rad}{s}$ & &
@@ -65,18 +65,18 @@ The spectrum of the filter looks like this
 
 
 \subsubsection{Aliasing\buchSeite{38}}
-If the signal frequency $f$ is outside the nyquist interval, the signal will be
+If the signal frequency $f$ is outside the Nyquist interval, the signal will be
 aliased with $f - f_{sampling}$.\\
 \textbf{Example:} $sin(8\pi t)$ (signal frequency $f=4$) sampled at a rate of
 $f_s=5Hz$ will be aliased to $sin(2\pi (f-f_s) t) = sin(2\pi (-1) t)$
 \[ f_{ia} = f_i mod (f_s) = f_i + nf_s \]
 
-Is the signal frequency $f$ inside the nyquist interval, no aliasing will be
+Is the signal frequency $f$ inside the Nyquist interval, no aliasing will be
 perceived.
 
-The stop frequency from the Antialiasing Prefilter is defined as:
+The stop frequency from the antialiasing prefilter is defined as:
 \[ f_{stop} = f_s - f_{pass} \]
-The attenuation of the Antialiasing Prefilter is:
+The attenuation of the antialiasing prefilter is:
 
 \[ A(f) = -20 \cdot \log_{10}{\left|\frac{H(f)}{H(f_0)}\right|} \qquad [dB] \]
 
@@ -109,7 +109,7 @@ $f_0$: reference frequency (typ. DC)
     $H(f) = \dfrac{1}{2\pi j f}(1-e^{-2\pi f T}) = T \cdot \dfrac{\sin(\pi f T}{\pi f T}\cdot e^{-\pi j f T}$
   \end{tabular}
   
-  The higher spectral periodes don't get well suppressed, so an \textbf{anti-image postfilter} is needed.\\
+  The spectral images at higher frequencies are not well suppressed, therefore an \textbf{anti-image postfilter} is needed.\\
   \includegraphics[width=16cm]{./picture/compOfDSPSystem}
   
 
