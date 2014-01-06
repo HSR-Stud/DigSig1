@@ -5,4 +5,4 @@ Juerg Rast (jrast)
 Anina Schaelle (aschaell)
 Christian Winterhalter (cwinterh)
 Sven Koerner (sven-k)
-David Wright
+David Wright (dwright)
