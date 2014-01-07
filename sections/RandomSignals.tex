@@ -1,29 +1,29 @@
 \section{Random Signals\buch{Chapter 13}\buchSeite{713-719}}
 \begin{tabularx}{\linewidth}{|l|X|}
 	\hline
-	probability distribution & $F_x(\alpha) = Pr\{x \leq \alpha \}$ \\
+	probability distribution & $F_x(\alpha) = P(x \leq \alpha )$ \\
 	\hline
-	probability density & $f_x(\alpha) = \frac{d}{dx}F_x(\alpha)$\\
+	probability density & $f_x(\alpha) = \frac{d}{d\alpha}F_x(\alpha)$\\
 	\hline
-	mean / expected value & $E\{x\} = \sum\limits_k \alpha_k Pr\{x = \alpha_k\} =
-	\int\limits_{-\infty}^{\infty}a\cdot f_x(a)da$
+	mean / expected value & $E(x) = \sum\limits_k \alpha_k P(x = \alpha_k) =
+	\int\limits_{-\infty}^{\infty}\alpha\cdot f_x(\alpha)d\alpha$
 	\\
 	\hline
-	signal power & $E\{ x^2 \} = \sum\limits_k \alpha_k^2 Pr\{x = \alpha_k\} =
+	signal power & $E( x^2 ) = \sum\limits_k \alpha_k^2 P(x = \alpha_k) =
 	\int\limits_{-\infty}^{\infty} \alpha^2 f_x(\alpha) d\alpha$ \\
 	\hline
-	average absolute value & $E\{ |x| \} = \int\limits_{-\infty}^{\infty} |\alpha| f_x(\alpha) d\alpha 
+	average absolute value & $E( |x| ) = \int\limits_{-\infty}^{\infty} |\alpha| f_x(\alpha) d\alpha 
 										 = \int\limits_{0}^{\infty} \alpha[f_x(\alpha) + f_x(-\alpha)] d\alpha $
 	\\ \hline
 	variance $\sigma^2$ & 
-	$\sigma_x^2 = E\{ [x-E\{ x \}]^2 \} = E(x^2) - E(x)^2 = 
-	\int\limits_{-\infty}^{\infty}[\alpha - E\{ x \}]^2 f_x(\alpha) d\alpha $
+	$\sigma_x^2 = E\{ [x-E( x )]^2 \} = E(x^2) - E(x)^2 = 
+	\int\limits_{-\infty}^{\infty}[\alpha - E( x )]^2 f_x(\alpha) d\alpha $
 	\\ \hline
 	covariance &
-	$c_{xy} = Cov(x,y) = E\{(x-mx)(y-my)^*\} = E\{xy*\} - m_xm_y^*$
+	$c_{xy} = Cov(x,y) = E\{(x-E(x))(y-E(y))^*\} = E(xy*) - E(x)E(y^*)$
 	\\ \hline
   correlation &
-  $r_{xy} = E\{xy^*\}  \qquad r_{xy} = 0 \rightarrow$ orthogonal
+  $r_{xy} = E(xy^*)  \qquad r_{xy} = 0 \rightarrow$ orthogonal
 	\\ \hline
   correlation coefficient &
   $\rho_{xy} = \dfrac{c_{xy}}{\sigma_x\sigma_y} \qquad -1\leq \rho_{xy} \leq 1$ \newline
@@ -31,7 +31,8 @@
 	\\ \hline
 	autocorrelation function & 
 	$R_{XX}(k) = E[x(n+k)x(n)]	= \dfrac{1}{N}\sum\limits_{n=0}^{N-1-k} x(n+k)x(n) \newline
-	R_{XX}(k) = R_{XX}(-k)$
+	R_{XX}(k) = R_{XX}(-k) \newline
+	R_{XX}(0) = E(x^2)$ (dirac impulse at point zero)
 	\\ \hline
   power &
   $\sigma_x^2 = R_{XX}(0) = E\{x(n)^2\} = \int\limits_{-\pi}^\pi S_{XX}(\omega)\dfrac{d\omega}{2\pi}$ \newline
