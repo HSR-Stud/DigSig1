@@ -87,40 +87,40 @@ Performance of oversampling noise shaping quantizers:
 
 \subsection{A/D converters\buchSeite{75}}
 
-\subsubsection{Successive Approximation Converters}
+\subsubsection{Successive Approximation Converters \buchSeite{76}}
 
-\begin{center}
-\begin{tabular}{|p{0.45\textwidth}|p{0.45\textwidth}|}
-\hline
-	\multicolumn{2}{|c|}{\textbf{Conversion algorithms}}\\
-	\hline
-	\textbf{Natural and offset binary}
-		& \textbf{Two's complement}\\
-	\hline
-	if mode = rounding:\newline
-		\hspace*{0.5cm} $y = x + \frac{Q}{2}$\newline
-	else if mode = truncation:\newline
-		\hspace*{0.5cm} $y = x$\newline
-	for each $x$ to be converted, do:\newline
-		\hspace*{0.5cm} initialize $\mathbf{b}=[0,0,\dots ,0]$\newline
-		\hspace*{0.5cm} for $\mathbf{i}=1,2,\dots , B$ do:\newline
-		\hspace*{1cm}$b_i = 1$\newline
-		\hspace*{1cm}$x_Q = \text{dac}(\mathbf{b}, B, R)$\newline
-		\hspace*{1cm}$b_i = u(y-x_Q)$
-		& if mode = rounding: \newline
-		\hspace*{0.5cm} $y = x + \frac{Q}{2}$ \newline
-		else if mode = truncation: \newline
-		\hspace*{0.5cm} $y = x$ \newline
-		for each $x$ to be converted, do:\newline
-		\hspace*{0.5cm} initialize $\mathbf{b}=[0,0,\dots ,0]$\newline
-		\hspace*{0.5cm} $b_1 = 1- u(y)$ \newline
-		\hspace*{0.5cm} for $\mathbf{i}=2,3,\dots , B$ do:\newline
-		\hspace*{1cm}$b_i = 1$\newline
-		\hspace*{1cm}$x_Q = \text{dac}(\mathbf{b}, B, R)$\newline
-		\hspace*{1cm}$b_i = u(y-x_Q)$\\
-	\hline
-\end{tabular}
-\end{center}
+%\begin{center}
+%\begin{tabular}{|p{0.45\textwidth}|p{0.45\textwidth}|}
+%\hline
+%	\multicolumn{2}{|c|}{\textbf{Conversion algorithms}}\\
+%	\hline
+%	\textbf{Natural and offset binary}
+%		& \textbf{Two's complement}\\
+%	\hline
+%	if mode = rounding:\newline
+%		\hspace*{0.5cm} $y = x + \frac{Q}{2}$\newline
+%	else if mode = truncation:\newline
+%		\hspace*{0.5cm} $y = x$\newline
+%	for each $x$ to be converted, do:\newline
+%		\hspace*{0.5cm} initialize $\mathbf{b}=[0,0,\dots ,0]$\newline
+%		\hspace*{0.5cm} for $\mathbf{i}=1,2,\dots , B$ do:\newline
+%		\hspace*{1cm}$b_i = 1$\newline
+%		\hspace*{1cm}$x_Q = \text{dac}(\mathbf{b}, B, R)$\newline
+%		\hspace*{1cm}$b_i = u(y-x_Q)$
+%		& if mode = rounding: \newline
+%		\hspace*{0.5cm} $y = x + \frac{Q}{2}$ \newline
+%		else if mode = truncation: \newline
+%		\hspace*{0.5cm} $y = x$ \newline
+%		for each $x$ to be converted, do:\newline
+%		\hspace*{0.5cm} initialize $\mathbf{b}=[0,0,\dots ,0]$\newline
+%		\hspace*{0.5cm} $b_1 = 1- u(y)$ \newline
+%		\hspace*{0.5cm} for $\mathbf{i}=2,3,\dots , B$ do:\newline
+%		\hspace*{1cm}$b_i = 1$\newline
+%		\hspace*{1cm}$x_Q = \text{dac}(\mathbf{b}, B, R)$\newline
+%		\hspace*{1cm}$b_i = u(y-x_Q)$\\
+%	\hline
+%\end{tabular}
+%\end{center}
 
 \subsection{Analog and digital dither\buchSeite{84-86}}
 Dither is a small white noise signal that is added to the input signal befor quantization. The variance of the noise is $\sigma_v^2$ and the variance of the quantization is $\sigma_e^2$. The total variance is :
