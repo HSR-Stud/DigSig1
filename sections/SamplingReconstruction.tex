@@ -20,10 +20,16 @@ the time $t$ as follows:
 \[ t = nT \qquad n = 0,1,2,\ldots \]
 The sampling frequency relates to the sampling interval as follows:
 \[ f_s = \frac{1}{T} \]
-Sampling Theorem (Nyquist rate):
-\[ f_s \geq 2f_{max} \qquad \text{or} \qquad T \leq \frac{1}{2f_{max}} \]
-Nyquist interval:
-\[ \left[-\frac{f_s}{2}, \frac{f_s}{2}\right] \]
+\begin{multicols}{2}
+  Sampling Theorem (Nyquist rate):
+  \[ f_s \geq 2f_{max} \qquad \text{or} \qquad T \leq \frac{1}{2f_{max}} \]
+  
+\columnbreak
+
+  Nyquist interval:
+  \[ \left[-\frac{f_s}{2}, \frac{f_s}{2}\right] \]
+  
+\end{multicols}
 
 %The spectrum $\hat{X}(f)$ of the sampled signal will be replicated
 %\[ \hat{X}(f) = \frac{1}{T} \sum_{m=-\infty}^{\infty}X(f-m f_s)\]
@@ -64,21 +70,24 @@ The spectrum of the filter looks like this
 
 
 
-\subsubsection{Aliasing\buchSeite{38}}
+\subsubsection{Aliasing\buchSeite{10, 38}}
 If the signal frequency $f$ is outside the Nyquist interval, the signal will be
 aliased with $f - f_{sampling}$.\\
-\textbf{Example:} $\sin(8\pi t)$ (signal frequency $f=4$) sampled at a rate of
-$f_s=5Hz$ will be aliased to $\sin(2\pi (f-f_s) t) = \sin(2\pi (-1) t)$
-\begin{equation}
-	f_{ia} = f_i \, \text{mod}(f_s) = f_i + nf_s
-\end{equation} 
+
+\textbf{Example:} $sin(8\pi t)$ (signal frequency $f=4$) sampled at a rate of
+$f_s=5Hz$ will be aliased to $sin(2\pi (f-f_s) t) = sin(2\pi (-1) t)$
+\[ f_{ia} = f_i + nf_s \]
+n has to be choosed, that $f_{ia}$ is in the Nyquist intervall. n can also be negative.\\
+
 
 Is the signal frequency $f$ inside the Nyquist interval $\left[-f_s/2,+f_s/2\right]$, no aliasing will be
 perceived.
 
+\subsubsection{Antialiasing Prefilter \buchSeite{38}}
 The stop frequency from the antialiasing prefilter is defined as:
 \[ f_{stop} = f_s - f_{pass} \]
 The attenuation of the antialiasing prefilter is:
+\begin{multicols}{2}
 
 \[ A(f) = -20 \cdot \log_{10}{\left|\frac{H(f)}{H(f_0)}\right|} \qquad [dB] \]
 
@@ -86,7 +95,13 @@ The attenuation of the antialiasing prefilter is:
 
 \[ A_{dB} = \beta \log_{2}(\frac{f}{f_{cutoff}}) \qquad \beta = \frac{dB}{okt} \]
 
-\[ A_{dB}(f) = A_{DAC}(f) + A_{POST}(f) \]
+\[ A_{X}(f) = \underbrace{A(f)}_{Prefilter} + \underbrace{A_{X_{in}}(f)}_{Input spectrum} \]
+
+\columnbreak
+
+ \includegraphics[width=9.5cm]{./picture/antialiasing_prefilter}
+
+\end{multicols}
 
 $f_0$: reference frequency (typ. DC)
 
