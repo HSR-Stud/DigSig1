@@ -77,12 +77,12 @@ $y=[y_0, y_1, y_2, y_3, y_4, y_5, y_6, y_7]$
 	$x_2$ & 0 & 0 & $x_2h_0$ & $x_2h_1$ & $x_2h_2$ & $x_2h_3$ & 0 & 0 \\
 	$x_3$ & 0 & 0 & 0 & $x_3h_0$ & $x_3h_1$ & $x_3h_2$ & $x_3h_3$ & 0 \\
 	$x_4$ & 0 & 0 & 0 & 0 & $x_4h_0$ & $x_4h_1$ & $x_4h_2$ & $x_4h_3$ \\
-	\hline
+	\hline\hline
 	$y_n$ & $y_0$ & $y_1$ & $y_2$ & $y_3$ & $y_4$ & $y_5$ & $y_6$ & $y_7$ \\
 \end{tabular}
-\begin{align}
-& y(n) = \sum\limits_{m=max(0,n-M)}^{min(n,L-1)} x(m)h(n-m) && \text{LTI-form}\notag
-\end{align}
+\begin{minipage}{6.5cm}
+  \hspace{0.5cm} $y(n) = \sum\limits_{m=max(0,n-M)}^{min(n,L-1)} x(m)h(n-m)$
+\end{minipage}
 
 
 \subsubsection{Matrix Form\buchSeite{129}}
@@ -221,21 +221,20 @@ example: with $L=3$ and $M=3$
 
 \subsubsection{Transient and Steady-State Behaviour\buchSeite{132,133}}
 \begin{multicols}{2}
-\begin{tabular}{|l|l|}
-	\hline
-	input-on transient	& $ 0 \leq n < M $
-	\\ \hline
-	steady state			& $ M \leq n \leq L-1 $
-	\\ \hline
-	input-off transient		& $ L-1 < n \leq L-1+M $
-	\\ \hline
-\end{tabular}
-\columnbreak
-\includegraphics[width=10cm]{./picture/transient_steady_state}
-\end{multicols}
-The DC gain of a stable filter is the steady-state value to which the output converges when the input is a unit step
-\[ y_{dc} = \sum_{m}^{} h(m) \qquad y_{dc}=\sum_{m=0}^{\infty}h(m) \]
+	\begin{tabular}{|l|l|}
+		\hline
+		input-on transient	& $ 0 \leq n < M $
+		\\ \hline
+		steady state			& $ M \leq n \leq L-1 $
+		\\ \hline
+		input-off transient		& $ L-1 < n \leq L-1+M $
+		\\ \hline
+	\end{tabular}
 
+\columnbreak
+
+  \includegraphics[width=10cm]{./picture/transient_steady_state}
+\end{multicols}
 
 Therefore, the direct form takes the following different forms depending
 on the value of the output index $n$:
@@ -249,7 +248,8 @@ on the value of the output index $n$:
 			\end{array}
 		\right.
 \]
-
+The DC gain of a stable filter is the steady-state value to which the output converges when the input is a unit step
+\[ y_{dc} = \sum_{m}^{} h(m) \qquad y_{dc}=\sum_{m=0}^{\infty}h(m) \]
 
 \subsubsection{Convolution of Infinite Sequences\buchSeite{134}}
 Three cases:
