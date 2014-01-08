@@ -67,11 +67,13 @@ The spectrum of the filter looks like this
 \subsubsection{Aliasing\buchSeite{38}}
 If the signal frequency $f$ is outside the Nyquist interval, the signal will be
 aliased with $f - f_{sampling}$.\\
-\textbf{Example:} $sin(8\pi t)$ (signal frequency $f=4$) sampled at a rate of
-$f_s=5Hz$ will be aliased to $sin(2\pi (f-f_s) t) = sin(2\pi (-1) t)$
-\[ f_{ia} = f_i mod (f_s) = f_i + nf_s \]
+\textbf{Example:} $\sin(8\pi t)$ (signal frequency $f=4$) sampled at a rate of
+$f_s=5Hz$ will be aliased to $\sin(2\pi (f-f_s) t) = \sin(2\pi (-1) t)$
+\begin{equation}
+	f_{ia} = f_i \, \text{mod}(f_s) = f_i + nf_s
+\end{equation} 
 
-Is the signal frequency $f$ inside the Nyquist interval, no aliasing will be
+Is the signal frequency $f$ inside the Nyquist interval $\left[-f_s/2,+f_s/2\right]$, no aliasing will be
 perceived.
 
 The stop frequency from the antialiasing prefilter is defined as:

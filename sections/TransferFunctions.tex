@@ -21,12 +21,19 @@ Example: $y(n) = 0.25 \cdot y(n-2) + x(n) $ \qquad (I/O difference equation)
 \begin{multicols}{3}
   \textbf{direct form \buchSeite{217}}\\
   \includegraphics[width=6cm]{./picture/direct_form}
+  	$H(z) = \frac{Y(z)}{X(z)} = \frac{5+2z^{-1}}{1-0.8z^{-1}}$ \\
+  	$Y(z)(1-0.8z^{-1}) = X(z)(5+2z^{-1})$ \\
+  	$Y(z) = $ \\ $5 X(z) + 2 z^{-1} X(z) + 0.8 z^{-1} Y(z)$
+ 
   
   \columnbreak
   
   \textbf{canonical form \buchSeite{220}}\\
   \includegraphics[width=6cm]{./picture/canonical_form}
-  
+  	$ H(z) = \frac{Y(z)}{X(z)} = \frac{5+2z^{-1}}{1-0.8z^{-1}}$ \\
+  	$ W(z) = \frac{1}{1-0.8z^{-1}} X(z)$ \\
+  	$ W(z) = X(z) + 0.8 z^{-1} W(z)$ \\
+  	$ Y(z) = (5+2z^{-1}) W(z)$
   \columnbreak
   
   \textbf{transposed form \buchSeite{222}}\\
