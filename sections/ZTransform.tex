@@ -43,12 +43,31 @@ If there is no ROC specified, we assume that the system is causal.
 
 \subsection{Causality and Stability\buchSeite{193}}
 
-For a signal or system to be simultaneously stable and \textbf{causal}, it is necessary that all its poles lie strictly 
+\begin{center}
+\begin{tabular}{|c|c|}
+	\hline
+	causal signals
+		& ROC $|z| > \max\limits_{i}|p_i|$\\
+	\hline
+	mixed signals
+		& ROC $\min\limits_{i}|p_i| < |z| < \max\limits_{i}|p_i|$ \\
+	\hline
+	anticausal signals
+		& ROC $|z| < \min\limits_{i}|p_i|$\\
+	\hline
+	stable signals
+		& $\{z\Big|(|z| = 1)\} \in$ ROC\\
+	\hline
+\end{tabular}
+\end{center}
+
+
+For a signal or system to be \textbf{simultaneously stable and causal}, it is necessary that all its poles lie strictly 
 \textbf{inside} the unit circle in the z-plane. 
 \[ 1 > \max\limits_{i}|p_i| \]
 
 A signal or system
-can also be simultaneously stable and \textbf{anticausal}, but in this case all its poles must lie
+can also be \textbf{simultaneously stable and anticausal}, but in this case all its poles must lie
 strictly \textbf{outside} the unit circle.
 \[ 1 < \min\limits_{i}|p_i| \]
 
