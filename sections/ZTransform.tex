@@ -140,17 +140,17 @@ For real valued discrete time sequences:\\
 	\hline
 	$-a^n u(-n-1)$ & $\frac{1}{1 - az^{-1}}$ & $|z|<|a| \quad$ (anticausal) \\
 	\hline
-	$e^{\alpha n}$ & $\frac{1}{1-e^{\alpha}z^{-1}}$ & \\
+	$u(n)e^{\alpha n}$ & $\frac{1}{1-e^{\alpha}z^{-1}}$ & $|z|>|e^{\alpha}|$ \\
 	\hline
-	$\cos(\omega n)$ & $\frac{1-\cos(\omega)z^{-1}}{1-2\cos(\omega)z^{-1}+z^{-2}}
-	 = \frac{1}{2}\left[\frac{1}{1-e^{j\omega}z^{-1}}+ \frac{1}{1-e^{-j\omega}z^{-1}}\right]$ & \\
+	$u(n)\cos(\omega n)$ & $\frac{1-\cos(\omega)z^{-1}}{1-2\cos(\omega)z^{-1}+z^{-2}}
+	 = \frac{1}{2}\left[\frac{1}{1-e^{j\omega}z^{-1}}+ \frac{1}{1-e^{-j\omega}z^{-1}}\right]$ & $|z|>1$\\
 	\hline
-	$\sin(\omega n)$ & $\frac{\sin(\omega)z^{-1}}{1-2\cos(\omega)z^{-1}+z^{-2}}
-  = \frac{1}{2j}\left[\frac{1}{1-e^{j\omega}z^{-1}}- \frac{1}{1-e^{-j\omega}z^{-1}}\right]$ & \\
+	$u(n)\sin(\omega n)$ & $\frac{\sin(\omega)z^{-1}}{1-2\cos(\omega)z^{-1}+z^{-2}}
+  = \frac{1}{2j}\left[\frac{1}{1-e^{j\omega}z^{-1}}- \frac{1}{1-e^{-j\omega}z^{-1}}\right]$ & $|z|>1$\\
 	\hline
-	$A\delta(n)$ & $A$ & \\
+	$A\delta(n)$ & $A$ & all $z$\\
 	\hline
-	$A\delta(n-D)$ & $Az^{-D}$ & \\
+	$A\delta(n-D)$ & $Az^{-D}$ & $z\neq 0$\\
 	\hline
 \end{tabular}
 
