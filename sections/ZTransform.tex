@@ -122,7 +122,7 @@ For real valued discrete time sequences:\\
 \end{tabularx} \\ \\
 
 
-\textbf{Some Z-Transforms:}\\ \\
+\textbf{Some z-Transforms:}\\ \\
 
 \begin{tabular}{|l|l|l|}
 	\hline
@@ -140,13 +140,13 @@ For real valued discrete time sequences:\\
 	\hline
 	$-a^n u(-n-1)$ & $\frac{1}{1 - az^{-1}}$ & $|z|<|a| \quad$ (anticausal) \\
 	\hline
-	$e^{\alpha n}$ & $\frac{z}{z-e^{\alpha}}$ & \\
+	$e^{\alpha n}$ & $\frac{1}{1-e^{\alpha}z^{-1}}$ & \\
 	\hline
 	$\cos(\omega n)$ & $\frac{1-\cos(\omega)z^{-1}}{1-2\cos(\omega)z^{-1}+z^{-2}}
 	 = \frac{1}{2}\left[\frac{1}{1-e^{j\omega}z^{-1}}+ \frac{1}{1-e^{-j\omega}z^{-1}}\right]$ & \\
 	\hline
 	$\sin(\omega n)$ & $\frac{\sin(\omega)z^{-1}}{1-2\cos(\omega)z^{-1}+z^{-2}}
-  = \frac{1}{j2}\left[\frac{1}{1-e^{j\omega}z^{-1}}- \frac{1}{1-e^{-j\omega}z^{-1}}\right]$ & \\
+  = \frac{1}{2j}\left[\frac{1}{1-e^{j\omega}z^{-1}}- \frac{1}{1-e^{-j\omega}z^{-1}}\right]$ & \\
 	\hline
 	$A\delta(n)$ & $A$ & \\
 	\hline

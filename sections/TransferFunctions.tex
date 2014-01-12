@@ -41,33 +41,33 @@ Example: $y(n) = 0.25 \cdot y(n-2) + x(n) $ \qquad (I/O difference equation)
 	Y(z) = 0.25z^{-2}Y(z) + X(z)
 \]
 
-\begin{multicols}{3}
-  \textbf{direct form \buchSeite{217}}\\
-  \includegraphics[width=6cm]{./picture/direct_form}
-  	$H(z) = \frac{Y(z)}{X(z)} = \frac{5+2z^{-1}}{1-0.8z^{-1}}$ \\
-  	$Y(z)(1-0.8z^{-1}) = X(z)(5+2z^{-1})$ \\
-  	$Y(z) = $ \\ $5 X(z) + 2 z^{-1} X(z) + 0.8 z^{-1} Y(z)$
- 
-  
-  \columnbreak
-  
-  \textbf{canonical form \buchSeite{220}}\\
-  \includegraphics[width=6cm]{./picture/canonical_form}
-  	$ H(z) = \frac{Y(z)}{X(z)} = \frac{5+2z^{-1}}{1-0.8z^{-1}}$ \\
-  	$ W(z) = \frac{1}{1-0.8z^{-1}} X(z)$ \\
-  	$ W(z) = X(z) + 0.8 z^{-1} W(z)$ \\
-  	$ Y(z) = (5+2z^{-1}) W(z)$
-  \columnbreak
-  
-  \textbf{transposed form \buchSeite{222}}\\
-  \includegraphics[width=6cm]{./picture/transposed_form}
-  
-  \textbf{Transposition rules:} \\
-  replace adders by nodes, \\
-  nodes by adders, \\
-  reversing all flows and \\
-  exchanging input with output
-\end{multicols}
+\begin{longtable}{p{0.29\textwidth}p{0.29\textwidth}p{0.29\textwidth}}
+	  \textbf{direct form \buchSeite{217}}\newline
+	  \includegraphics[width=\linewidth]{./picture/direct_form}\newline
+	  	$H(z) = \frac{Y(z)}{X(z)} = \frac{5+2z^{-1}}{1-0.8z^{-1}}$ \newline
+	  	$Y(z)(1-0.8z^{-1}) = X(z)(5+2z^{-1})$ \newline
+	  	$Y(z) = $ \newline $5 X(z) + 2 z^{-1} X(z) + 0.8 z^{-1} Y(z)$
+	  		&
+	  	  \textbf{canonical form \buchSeite{220}}\newline
+	  	  \includegraphics[width=\linewidth]{./picture/canonical_form}
+	  	  	$ H(z) = \frac{Y(z)}{X(z)} = \frac{5+2z^{-1}}{1-0.8z^{-1}}$ \newline
+	  	  	$ W(z) = \frac{1}{1-0.8z^{-1}} X(z)$ \newline
+	  	  	$ W(z) = X(z) + 0.8 z^{-1} W(z)$ \newline
+	  	  	$ Y(z) = (5+2z^{-1}) W(z)$
+	  	 	&
+	  	   \textbf{transposed form \buchSeite{222}}\newline
+	  	   \includegraphics[width=\linewidth]{./picture/transposed_form}\newline
+	  	   
+	  	   $W(z) = 2\cdot X(z) + 0.8\cdot Y(z)$\newline
+	  	   $W_1(z) = z^-1 W(z)$\newline
+	  	   $Y(z) = 5\cdot X(z) + Y(z)$\newline
+	  	   
+	  	   \textbf{Transposition rules:} \newline
+	  	   replace adders by nodes, \newline
+	  	   nodes by adders, \newline
+	  	   reversing all flows and \newline
+	  	   exchanging input with output
+\end{longtable}
 
 \subsection{Steady state response\buchSeite{229-232}}
 \begin{align*}
