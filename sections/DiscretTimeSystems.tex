@@ -14,6 +14,7 @@ testing: & $x_D(n)=x(n-D)$ and $y_D(n)=y(n-D)$\\
 
 
 \subsection{Finite and Infinite Impulse Response filters\buchSeite{105,106}}
+\setArrayStretch{1.5}
 \begin{tabularx}{0.75\textwidth}{|l|X|X|}
 	\hline
 	$M$	& filter order				& 
@@ -27,8 +28,7 @@ testing: & $x_D(n)=x(n-D)$ and $y_D(n)=y(n-D)$\\
 	IIR		& IIR filtering equation	& $y(n) = \sum\limits_{m=0}^{\infty} h(m)x(n-m)$
 	\\ \hline
 \end{tabularx}
-
-\newpage
+\resetArrayStretch
 
 \begin{multicols}{2}
 \subsection{Causality\buchSeite{112}}
@@ -36,8 +36,8 @@ testing: & $x_D(n)=x(n-D)$ and $y_D(n)=y(n-D)$\\
 	\textbf{causal} & right sided signals, they are non-zero for $n>=0$ \\
 	\textbf{anticausal} & left sided signals, they are non-zero for $n<=-1$ \\
 	\textbf{mixed signals} & double-sided signals \\
+	\multicolumn{2}{l}{\includegraphics[width=9cm]{./picture/causality}}\\
 \end{tabular}
-\vfill
 
 \columnbreak
 
@@ -50,7 +50,8 @@ y_D(n) = & \sum\limits_{m}h_D(m)x(n-m) = \sum\limits_{m}h(m-D)x(n-m) \\
 \xrightarrow{m := k+D}& \sum\limits_{k}h(k)x(n-k-D) = y(n-D)
 \end{align*}
 \end{multicols}
-\includegraphics[width=15cm]{./picture/causality}
+
+
 
 \subsection{Stability\buchSeite{115}}
 \textbf{Stability Condition} $\sum\limits_{n=-\infty}^{\infty}\left| h(n)

@@ -1,5 +1,6 @@
 \section{Quantization\buch{Chapter 2}}
 
+\setArrayStretch{1.2}
 \subsection{Quantization process\buchSeite{62}}
 \begin{tabularx}{\textwidth}{|l|X|X|}
 	\hline
@@ -34,10 +35,12 @@
 	\multicolumn{3}{l}{p = order of the noise shaping filter}
 \end{tabularx}
 
-Performance of oversampling noise shaping quantizers:
 
-\setArrayStretch{1.2}
-\begin{tabularx}{0.75\textwidth}{|c|X|c|c|c|c|c|c|}
+\textbf{Performance of oversampling noise shaping quantizers}:
+
+\vspace{0.2cm}
+\setArrayStretch{1.0}
+\begin{tabularx}{0.65\textwidth}{|c|X|c|c|c|c|c|c|}
 	\hline
 	$p$	& $L$							& 4		& 8		& 16	& 32	& 64	& 128
 	\\ \hline
@@ -50,16 +53,19 @@ Performance of oversampling noise shaping quantizers:
 	\hline
 \end{tabularx}
 \resetArrayStretch
-\begin{multicols}{2}
-  Oversampled quantization noise power, whitout noise shaping.
-  
-  \includegraphics[width=7cm]{./picture/no_noise_shaping}
-  
-\columnbreak
 
-  Spectrum of oversampling noise shaping quantizer.
-  \includegraphics[width=7cm]{./picture/noise_shaping}
-\end{multicols}
+\vspace{0.2cm}
+\begin{minipage}{0.3\textwidth}
+  Oversampled quantization noise power, \textbf{whitout noise shaping.}
+  
+  \includegraphics[width=\textwidth]{./picture/no_noise_shaping}
+\end{minipage}
+\hspace{0.1\textwidth}
+\begin{minipage}{0.3\textwidth}
+  Spectrum of oversampling \textbf{noise shaping quantizer}.
+  
+  \includegraphics[width=\textwidth]{./picture/noise_shaping}
+\end{minipage}
 
 
 \subsection{D/A converters\buchSeite{71-73}}
