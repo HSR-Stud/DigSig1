@@ -118,12 +118,12 @@ $f_0$: reference frequency (typ. DC)
   
 
 \subsubsection{Staircase reconstructor \buchSeite{45}}
-  \begin{tabular}{p{8cm}}
+  \begin{tabular}{p{8.2cm}}
     $h(t) = u(t) - u(t-T) = \left\lbrace \begin{matrix}
       1 & 0\leq t \leq T \\
       0 & else
     \end{matrix}\right.$ \\
-    $H(f) = \dfrac{1}{2\pi j f}(1-e^{-2\pi f T}) = T \cdot \dfrac{\sin(\pi f T)}{\pi f T}\cdot e^{-\pi j f T}$
+    $H(f) = \dfrac{1}{2\pi j f}(1-e^{-2\pi j f T}) = T \cdot \dfrac{\sin(\pi f T)}{\pi f T}\cdot e^{-\pi j f T}$
   \end{tabular}
   \begin{minipage}{10cm}
 	    \includegraphics[width=10cm]{./picture/compOfDSPSystem}
